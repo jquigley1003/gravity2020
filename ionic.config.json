@@ -1,0 +1,7 @@
+{
+  "name": "gravity2020",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
