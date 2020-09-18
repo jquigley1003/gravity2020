@@ -230,3 +230,33 @@
     --ion-card-background: #1e1e1e;
   }
 }
+
+/** custom fonts **/
+
+@font-face {
+  font-family: 'Mister Belvedere';
+  font-style: normal;
+  font-weight: normal;
+  src: url('../assets/fonts/MisterBelvedere-l9BD.ttf');
+}
+
+@font-face {
+  font-family: 'Mister Belvedere 3D';
+  font-style: normal;
+  font-weight: bold;
+  src: url('../assets/fonts/MisterBelvedere3D-1DX0.ttf');
+}
+
+@font-face {
+  font-family: 'Trueno Black';
+  font-style: normal;
+  font-weight: normal;
+  src: url('../assets/fonts/TruenoBlack-mBYV.otf');
+}
+
+@font-face {
+  font-family: 'Trueno Black Outline';
+  font-style: normal;
+  font-weight: bold;
+  src: url('../assets/fonts/TruenoBlackOutline-P43P.otf');
+}

@@ -1,0 +1,88 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Home</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="logo-home">
+    <img src="../assets/Gravity-Logo-400.png" >
+  </div>
+  <!-- <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">{{ folder }}</ion-title>
+    </ion-toolbar>
+  </ion-header> -->
+<ion-grid class="ion-no-padding">
+  <ion-row>
+    <ion-col class="slide-container">
+      <ion-slides [options]="slideOpts" pager="true">
+        <ion-slide>
+          <div class="slide-text">
+            <span class="trueno-outline">ATLANTA'S PREMIER</span><br>
+            <span class="trueno">COMMUNITY GYM</span>
+          </div>
+          <img  src="../assets/GymBlueRoom1.jpg" >
+        </ion-slide>
+        <ion-slide>
+          <div class="slide-text">
+            <span class="trueno-outline">ATLANTA'S PREMIER</span><br>
+            <span class="trueno">COMMUNITY GYM</span>
+          </div>
+          <img src="../assets/GymBlueRoom2.jpg" >
+        </ion-slide>
+        <ion-slide>
+          <div class="slide-text">
+            <span class="trueno-outline">ATLANTA'S PREMIER</span><br>
+            <span class="trueno">COMMUNITY GYM</span>
+          </div>
+          <img src="../assets/GymMaroonRoom1.jpg" >
+        </ion-slide>
+        <ion-slide>
+          <div class="slide-text">
+            <span class="trueno-outline">ATLANTA'S PREMIER</span><br>
+            <span class="trueno">COMMUNITY GYM</span>
+          </div>
+          <img src="../assets/GymMaroonRoom2.jpg" >
+        </ion-slide>
+      </ion-slides>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col class="ion-padding">
+      <div class="welcome-container">
+        <strong class="capitalize">Want to be healthy and improve your body? 
+          Gravity Fitness is the perfect fit for you! This Atlanta Midtown gym 
+          has a strong community feel like no other. Come find out why so many choose 
+          this hidden gem as their #1 workout place.  
+        </strong>
+      </div>
+    </ion-col>
+  </ion-row>
+  <ion-row class="card-container">
+    <ion-col size-xs="12" size-sm="6" size-md="3">
+      <ion-card>
+        <img  src="../assets/AaronKenWorkout.jpg" >
+      </ion-card>
+    </ion-col>
+    <ion-col size-xs="12" size-sm="6" size-md="3">
+      <ion-card>
+        <img  src="../assets/GravityBackBlue1.jpg" >
+      </ion-card>
+    </ion-col>
+    <ion-col size-xs="12" size-sm="6" size-md="3">
+      <ion-card>
+        <img  src="../assets/GravityFrontMaroon1.jpg" >
+      </ion-card>
+    </ion-col>
+    <ion-col size-xs="12" size-sm="6" size-md="3">
+      <ion-card>
+        <img  src="../assets/GravitySideRoom1.jpg" >
+      </ion-card>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+</ion-content>
