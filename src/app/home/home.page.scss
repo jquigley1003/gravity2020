@@ -6,6 +6,17 @@ ion-menu-button {
   color: var(--ion-color-primary);
 }
 
+ion-fab-button {
+  --background: translucent;
+  --background-hover-opacity: .5;
+  --background-activated-opacity: 1.0;
+  --color-hover: var(--ion-color-primary);
+  --color-activated: var(--ion-color-primary);
+  --border-color: white;
+  --border-style: solid;
+  --border-width: 2px;
+}
+
 .slide-container {
   background: darkblue;
 }
@@ -30,6 +41,8 @@ ion-menu-button {
 
 .logo-home {
   position: absolute;
+  background: rgba(3, 6, 161, 0.5);
+  border-radius: 50%;
   top: 10%;
   left: 50%;
   width: 25%;
@@ -44,14 +57,24 @@ ion-menu-button {
   width: 100%;
 }
 
+.welcome-background {
+  background-image: url("/assets/GymBlueRoom1.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 .welcome-container {
-  text-align: center
+  margin: 1em;
+  background: rgba(255,255,255, 0.5);
+  border-radius: 10px 10px 10px 10px;
+  text-align: center;
 }
 
 .welcome-container strong {
-  color: darkblue;
-  font-size: 20px;
-  line-height: 26px;
+  color: var(--ion-color-dark);
+  font-size: 2em;
+  opacity: 1.0;
 }
 
 .welcome-container p {
@@ -61,29 +84,31 @@ ion-menu-button {
   margin: 0;
 }
 
+ion-card {
+  position: relative;
+  text-align: center;
+  font-family: 'Trueno Black Outline';
+}
+
+ion-card:hover {
+  font-family: 'Trueno Black';
+  cursor: pointer;
+}
+
 .card-container {
   background: darkblue;
   background-image: url("/assets/GymBlueRoom1.jpg");
 }
 
-ion-card {
-  position: relative;
-  text-align: center;
-  font-family: 'Trueno Black';
-}
 
 .card-title {
   position: absolute;
   top: 36%;
-  font-size: 2.0em;
+  font-size: 3.0em;
   width: 100%;
   font-weight: bold;
   color: #fff;
   text-shadow: 3px 3px darkblue;
-}
-
-ion-card:hover {
-  font-family: 'Trueno Black Outline';
 }
 
 .card-subtitle {

@@ -7,7 +7,13 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" [scrollEvents]="true" 
+(ionScrollStart)="showFabButton()">
+  <ion-fab *ngIf="showFAB" vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="goToTop()">
+      <ion-icon name="arrow-up-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
   <div class="logo-home">
     <img src="../assets/Gravity-Logo-400.png" >
   </div>
@@ -52,44 +58,88 @@
     </ion-col>
   </ion-row>
   <ion-row>
-    <ion-col class="ion-padding">
-      <div class="welcome-container">
-
-        <strong class="capitalize">Want to be active and improve your body? 
-          Gravity Fitness is the perfect fit for you! This Atlanta Midtown gym 
-          has a strong community feel like no other. Come find out why so many 
-          health-minded people choose this hidden gem as their #1 workout place.  
-        </strong>
-
-      </div>
+    <ion-col>
+      <hr>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <ion-row>
+        <ion-col size="12" class="ion-text-center">
+          <h1><span class="trueno-outline">WHO </span>
+            <span class="trueno">WE ARE</span></h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, tenetur quo nesciunt quidem consequuntur excepturi facilis error? Temporibus eaque tenetur vero nulla totam vel veniam aspernatur, nisi soluta quos laborum.
+            </p>
+        </ion-col>
+      </ion-row>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <hr>
     </ion-col>
   </ion-row>
   <ion-row class="card-container">
-    <ion-col size-xs="12" size-sm="6" size-md="3">
+    <ion-col size-xs="12" size-sm="12" size-md="6" size-lg="6" size-xl="3">
       <ion-card>
-        <img  src="../assets/AaronKenWorkout.jpg" >
+        <img #training class="training" (tap)="trainingHover()" (mouseover)="trainingHover()" src="../assets/AaronKenWorkout.jpg" >
         <div class="card-title">TRAINING</div>
         <div class="card-subtitle">64 Listings</div>
       </ion-card>
     </ion-col>
-    <ion-col size-xs="12" size-sm="6" size-md="3">
+    <ion-col size-xs="12" size-sm="12" size-md="6" size-lg="6" size-xl="3">
       <ion-card>
-        <img  src="../assets/GravityBackBlue1.jpg" >
-        <div class="card-title">TRAINING</div>
+        <img #classes class="classes" (mouseover)="classesHover()" src="../assets/GravityBackBlue1.jpg" >
+        <div class="card-title">CLASSES</div>
         <div class="card-subtitle">64 Listings</div>
       </ion-card>
     </ion-col>
-    <ion-col size-xs="12" size-sm="6" size-md="3">
+    <ion-col size-xs="12" size-sm="12" size-md="6" size-lg="6" size-xl="3">
       <ion-card>
         <img  src="../assets/GravityFrontMaroon1.jpg" >
-        <div class="card-title">TRAINING</div>
+        <div class="card-title">MASSAGE</div>
       </ion-card>
     </ion-col>
-    <ion-col size-xs="12" size-sm="6" size-md="3">
+    <ion-col size-xs="12" size-sm="12" size-md="6" size-lg="6" size-xl="3">
       <ion-card>
         <img  src="../assets/GravitySideRoom1.jpg" >
-        <div class="card-title">TRAINING</div>
+        <div class="card-title">MEMBERSHIP</div>
       </ion-card>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col class="welcome-container">
+      <ion-row>
+        <ion-col size="1">
+          <img src="../assets/quoteStart.png">
+        </ion-col>
+        <ion-col size="10" class="ion-padding">
+          <div>
+            <strong>Want to be active and improve your body? 
+              Gravity Fitness is the perfect fit for you! This Atlanta Midtown gym 
+              has a strong community feel like no other. Come find out why so many 
+              health-minded people choose this hidden gem as their #1 workout place.  
+            </strong>
+          </div>
+        </ion-col>
+        <ion-col size="1" class="ion-align-self-end">
+          <img src="../assets/quoteEnd.png">
+        </ion-col>
+      </ion-row>
+    </ion-col>
+  </ion-row>
+  <ion-row class="welcome-background ion-margin">
+    <ion-col size-xs="6" size-sm="6" size-md="6" size-lg="4" size-xl="4" 
+    *ngFor="let pic of instagramPhotos">
+      <img [src]="pic.url">
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col size="12" class="ion-text-center">
+      <video [muted]="'muted'" autoplay loop width="400" height="300" controls>
+        <source alt="Video by Adailton Batista from Pexels" src="../assets/videos/Treadmill.mp4" type="video/mp4">
+          Video tag is not supported in this browser
+      </video>
     </ion-col>
   </ion-row>
 </ion-grid>

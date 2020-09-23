@@ -1,11 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ViewChild, AfterViewInit, ViewChildren, ElementRef } from '@angular/core';
+import { IonContent, AnimationController, Animation, IonCard } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.page.html',
   styleUrls: ['./home.page.scss'],
 })
-export class HomePage implements OnInit {
+export class HomePage implements AfterViewInit {
+  @ViewChild(IonContent, { static: false }) content: IonContent;
+  @ViewChild('training', { static: false }) myTraining: ElementRef;
+  @ViewChild('classes', { static: false }) myClasses: ElementRef;
+  @ViewChild('massage', { static: false }) myMassage: ElementRef;
+  @ViewChild('membership', { static: false }) myMembership: ElementRef;
+
+  trainingAnim: Animation;
+  classesAnim: Animation;
+  showFAB:boolean = false;
 
   slideOpts = {
     autoplay: {
@@ -72,9 +82,78 @@ export class HomePage implements OnInit {
     }
   }
 
-  constructor() { }
+  public instagramPhotos = [
+    {
+      title: 'Biceps',
+      url:  '../assets/socialMedia/photos-biceps.jpg',
+      icon: 'heart'
+    },
+    {
+      title: 'Members',
+      url: '../assets/socialMedia/photos-collage.jpg',
+      icon: 'heart'
+    },
+    {
+      title: 'David Sigler',
+      url: '../assets/socialMedia/photos-dave1.jpg',
+      icon: 'heart'
+    },
+    {
+      title: 'Pushups',
+      url: '../assets/socialMedia/photos-pushupwithbb.jpg',
+      icon: 'heart'
+    },
+    {
+      title: 'Wonder Women',
+      url: '../assets/socialMedia/photos-women.jpg',
+      icon: 'heart'
+    },
+    {
+      title: 'Darren Floro-Bryant',
+      url: '../assets/socialMedia/photos-dfb1.jpg',
+      icon: 'heart'
+    },
+  ];
 
-  ngOnInit() {
+  constructor(private animationCtrl: AnimationController) { }
+
+  ngAfterViewInit() {
+    this.trainingAnim = this.animationCtrl.create('myTrainingAnim');
+    this.trainingAnim
+      .addElement(this.myTraining.nativeElement)
+      .duration(7000)
+      .keyframes([
+        { offset: 0, transform: 'scale(1) rotate(0)' },
+        { offset: 0.5, transform: 'scale(2)' },
+        { offset: 1, transform: 'scale(1)' }
+      ]);
+
+    this.classesAnim = this.animationCtrl.create('myClassesAnim');
+    this.classesAnim
+      .addElement(this.myClasses.nativeElement)
+      .duration(7000)
+      .keyframes([
+        { offset: 0, transform: 'scale(1)' },
+        { offset: 0.5, transform: 'scale(2) rotate(-90deg)' },
+        { offset: 1, transform: 'scale(1) rotate(0deg)' }
+      ]);
   }
 
+  showFabButton() {
+    this.showFAB = true;
+  }
+
+  async goToTop() {
+    await this.content.scrollToTop(1000);
+    this.showFAB = false;
+    
+  }
+
+  trainingHover() {
+    this.trainingAnim.play();
+  }
+
+  classesHover() {
+    this.classesAnim.play();
+  }
 }
