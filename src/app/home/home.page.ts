@@ -1,4 +1,4 @@
-import { Component, ViewChild, AfterViewInit, ViewChildren, ElementRef } from '@angular/core';
+import { Component, ViewChild, AfterViewInit, ViewChildren, ElementRef, ɵbypassSanitizationTrustScript } from '@angular/core';
 import { IonContent, AnimationController, Animation, IonCard } from '@ionic/angular';
 
 @Component({
@@ -17,12 +17,12 @@ export class HomePage implements AfterViewInit {
   classesAnim: Animation;
   showFAB:boolean = false;
 
+
   slideOpts = {
     autoplay: {
       delay: 3000,
     },
     loop: true,
-    parallax: true,
     on: {
       beforeInit() {
         const swiper = this;
@@ -123,7 +123,7 @@ export class HomePage implements AfterViewInit {
       .addElement(this.myTraining.nativeElement)
       .duration(7000)
       .keyframes([
-        { offset: 0, transform: 'scale(1) rotate(0)' },
+        { offset: 0, transform: 'scale(1)' },
         { offset: 0.5, transform: 'scale(2)' },
         { offset: 1, transform: 'scale(1)' }
       ]);
@@ -134,8 +134,8 @@ export class HomePage implements AfterViewInit {
       .duration(7000)
       .keyframes([
         { offset: 0, transform: 'scale(1)' },
-        { offset: 0.5, transform: 'scale(2) rotate(-90deg)' },
-        { offset: 1, transform: 'scale(1) rotate(0deg)' }
+        { offset: 0.5, transform: 'scale(2)' },
+        { offset: 1, transform: 'scale(1)' }
       ]);
   }
 

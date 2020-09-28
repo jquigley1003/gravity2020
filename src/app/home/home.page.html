@@ -31,7 +31,7 @@
             <span class="trueno-outline">ATLANTA'S PREMIER</span><br>
             <span class="trueno">COMMUNITY GYM</span>
           </div>
-          <img  src="../assets/GymBlueRoom1.jpg" >
+          <img src="../assets/GymBlueRoom1.jpg" >
         </ion-slide>
         <ion-slide>
           <div class="slide-text">
@@ -82,28 +82,36 @@
   <ion-row class="card-container">
     <ion-col size-xs="12" size-sm="12" size-md="6" size-lg="6" size-xl="3">
       <ion-card>
-        <img #training class="training" (tap)="trainingHover()" (mouseover)="trainingHover()" src="../assets/AaronKenWorkout.jpg" >
-        <div class="card-title">TRAINING</div>
-        <div class="card-subtitle">64 Listings</div>
+        <ion-header>
+          <ion-card-title>TRAINING</ion-card-title>
+          <ion-card-subtitle>64 Listings</ion-card-subtitle>
+        </ion-header>
+        <img #training class="training" (mouseover)="trainingHover()" src="../assets/AaronKenWorkout.jpg" >
       </ion-card>
     </ion-col>
     <ion-col size-xs="12" size-sm="12" size-md="6" size-lg="6" size-xl="3">
       <ion-card>
+        <ion-header>
+          <ion-card-title>CLASSES</ion-card-title>
+          <ion-card-subtitle>64 Listings</ion-card-subtitle>
+        </ion-header>
         <img #classes class="classes" (mouseover)="classesHover()" src="../assets/GravityBackBlue1.jpg" >
-        <div class="card-title">CLASSES</div>
-        <div class="card-subtitle">64 Listings</div>
       </ion-card>
     </ion-col>
     <ion-col size-xs="12" size-sm="12" size-md="6" size-lg="6" size-xl="3">
       <ion-card>
+        <ion-header>
+          <ion-card-title>MASSAGE</ion-card-title>
+        </ion-header>
         <img  src="../assets/GravityFrontMaroon1.jpg" >
-        <div class="card-title">MASSAGE</div>
       </ion-card>
     </ion-col>
     <ion-col size-xs="12" size-sm="12" size-md="6" size-lg="6" size-xl="3">
       <ion-card>
+        <ion-header>
+          <ion-card-title>MEMBERSHIP</ion-card-title>
+        </ion-header>
         <img  src="../assets/GravitySideRoom1.jpg" >
-        <div class="card-title">MEMBERSHIP</div>
       </ion-card>
     </ion-col>
   </ion-row>

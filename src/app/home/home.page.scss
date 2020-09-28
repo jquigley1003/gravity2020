@@ -84,26 +84,32 @@ ion-fab-button {
   margin: 0;
 }
 
-ion-card {
-  position: relative;
-  text-align: center;
-  font-family: 'Trueno Black Outline';
-}
-
-ion-card:hover {
-  font-family: 'Trueno Black';
-  cursor: pointer;
-}
-
 .card-container {
   background: darkblue;
   background-image: url("/assets/GymBlueRoom1.jpg");
 }
 
+@media(hover: hover) and (pointer: fine) {
+  ion-card:hover {
+    font-family: 'Trueno Black';
+    cursor: pointer;
+  }
+}
 
-.card-title {
-  position: absolute;
-  top: 36%;
+ion-card {
+  // position: relative;
+  // text-align: center;
+  font-family: 'Trueno Black Outline';
+  --background: rgba(3, 6, 161, 0.5);
+}
+
+ion-card ion-header {
+  text-align: center;
+  background: transparent;
+}
+ion-card-title {
+  // position: absolute;
+  // top: 36%;
   font-size: 3.0em;
   width: 100%;
   font-weight: bold;
@@ -111,10 +117,58 @@ ion-card:hover {
   text-shadow: 3px 3px darkblue;
 }
 
-.card-subtitle {
+ion-card-subtitle {
+  // position: absolute;
+  // top: 52%;
   font-size: 1.0em;
-  position: absolute;
-  top: 52%;
   width: 100%;
   color: #fff;
 }
+
+
+// @media(hover: hover) and (pointer: fine) {
+//   .my-card:hover {
+//     font-family: 'Trueno Black';
+//     cursor: pointer;
+//   }
+// }
+
+// .my-card {
+//   margin: 0.5em 0.5em;
+//   border-radius: 7px 7px;
+//   position: relative;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   font-family: 'Trueno Black Outline';
+//   text-align: center;
+//   height: 95%;
+//   overflow: hidden;
+// }
+
+// .my-card h1{
+//   font-size: 3.0em;
+//   font-weight: bold;
+//   color: #fff;
+//   text-shadow: 3px 3px darkblue;
+//   z-index: 10;
+// }
+
+// .my-card-subtitle {
+//   font-size: 1.0em;
+//   position: absolute;
+//   margin: 0;
+//   top: 50%;
+//   transform: translate(0, -50%);
+//   width: 100%;
+//   color: #fff;
+//   z-index: 10;
+// }
+
+// .my-card-image {
+//   position: absolute;
+//   display: inline-block;
+//   top: 0px;
+//   left: 0px;
+//   z-index: 5;
+// }
