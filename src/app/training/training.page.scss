@@ -1,0 +1,39 @@
+ion-toolbar {
+  --background: transparent;
+}
+
+ion-card {
+  position: relative;
+  text-align: center;
+  font-family: 'Trueno Black Outline';
+  --background: rgba(3, 6, 161, 0.5);
+}
+
+ion-card ion-header {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  background: transparent;
+}
+ion-card-title {
+  font-size: 3.0em;
+  width: 100%;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 3px 3px darkblue;
+}
+
+ion-card-subtitle {
+  position: absolute;
+  top: 52%;
+  font-size: 1.0em;
+  width: 100%;
+  color: #fff;
+}
+
+.card-container {
+  background: darkblue;
+  background-image: url("/assets/GymBlueRoom1.jpg");
+}

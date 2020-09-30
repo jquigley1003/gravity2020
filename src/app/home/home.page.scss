@@ -2,6 +2,10 @@ img {
   height: auto;
 }
 
+ion-toolbar {
+  --background: transparent;
+}
+
 ion-menu-button {
   color: var(--ion-color-primary);
 }
@@ -89,25 +93,28 @@ ion-fab-button {
   background-image: url("/assets/GymBlueRoom1.jpg");
 }
 
+// MENU CARDS
+
 @media(hover: hover) and (pointer: fine) {
-  ion-card:hover {
+  .menu-card:hover {
     font-family: 'Trueno Black';
     cursor: pointer;
   }
 }
 
-ion-card {
+.menu-card {
   // position: relative;
   // text-align: center;
   font-family: 'Trueno Black Outline';
   --background: rgba(3, 6, 161, 0.5);
 }
 
-ion-card ion-header {
+.menu-card .menu-header {
   text-align: center;
   background: transparent;
 }
-ion-card-title {
+
+.menu-card-title {
   // position: absolute;
   // top: 36%;
   font-size: 3.0em;
@@ -117,7 +124,7 @@ ion-card-title {
   text-shadow: 3px 3px darkblue;
 }
 
-ion-card-subtitle {
+.menu-card-subtitle {
   // position: absolute;
   // top: 52%;
   font-size: 1.0em;
@@ -125,6 +132,46 @@ ion-card-subtitle {
   color: #fff;
 }
 
+// TRAINER CARDS
+
+.trainer-card {
+  position: relative;
+  text-align: center;
+  overflow: hidden;
+  font-family: 'Trueno Black Outline';
+  --background: rgba(3, 6, 161, 0.5);
+}
+
+// .trainer-card .trainer-header {
+//   position: absolute;
+//   top: 50%;
+//   left: 50%;
+//   transform: translate(-50%, -50%);
+//   text-align: center;
+// }
+
+.trainer-card-title {
+  position: absolute;
+  top: 45%;
+  font-size: 3.0em;
+  width: 100%;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 3px 3px darkblue;
+}
+
+.trainer-card-subtitle {
+  position: absolute;
+  top: 60%;
+  font-size: 1.0em;
+  width: 100%;
+  color: #fff;
+}
+
+.trainer-card img {
+  display: block;
+  overflow: hidden;
+}
 
 // @media(hover: hover) and (pointer: fine) {
 //   .my-card:hover {

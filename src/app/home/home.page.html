@@ -79,42 +79,42 @@
       <hr>
     </ion-col>
   </ion-row>
+  <!-- BEGINNING OF MENU CARDS -->
   <ion-row class="card-container">
     <ion-col size-xs="12" size-sm="12" size-md="6" size-lg="6" size-xl="3">
-      <ion-card>
-        <ion-header>
-          <ion-card-title>TRAINING</ion-card-title>
-          <ion-card-subtitle>64 Listings</ion-card-subtitle>
+        <ion-card class="menu-card" tappable (click)="goToTraining()" (mouseover)="trainingHover()">
+          <ion-header class="menu-header">
+            <ion-card-title class="menu-card-title">TRAINING</ion-card-title>
+          </ion-header>
+          <img #training class="training" src="../assets/AaronKenWorkout.jpg" >
+        </ion-card>
+    </ion-col>
+    <ion-col size-xs="12" size-sm="12" size-md="6" size-lg="6" size-xl="3">
+      <ion-card class="menu-card" (mouseover)="classesHover()">
+        <ion-header class="menu-header">
+          <ion-card-title class="menu-card-title">CLASSES</ion-card-title>
         </ion-header>
-        <img #training class="training" (mouseover)="trainingHover()" src="../assets/AaronKenWorkout.jpg" >
+        <img #classes class="classes" src="../assets/GravityBackBlue1.jpg" >
       </ion-card>
     </ion-col>
     <ion-col size-xs="12" size-sm="12" size-md="6" size-lg="6" size-xl="3">
-      <ion-card>
-        <ion-header>
-          <ion-card-title>CLASSES</ion-card-title>
-          <ion-card-subtitle>64 Listings</ion-card-subtitle>
-        </ion-header>
-        <img #classes class="classes" (mouseover)="classesHover()" src="../assets/GravityBackBlue1.jpg" >
-      </ion-card>
-    </ion-col>
-    <ion-col size-xs="12" size-sm="12" size-md="6" size-lg="6" size-xl="3">
-      <ion-card>
-        <ion-header>
-          <ion-card-title>MASSAGE</ion-card-title>
+      <ion-card class="menu-card">
+        <ion-header class="menu-header">
+          <ion-card-title class="menu-card-title">MASSAGE</ion-card-title>
         </ion-header>
         <img  src="../assets/GravityFrontMaroon1.jpg" >
       </ion-card>
     </ion-col>
     <ion-col size-xs="12" size-sm="12" size-md="6" size-lg="6" size-xl="3">
-      <ion-card>
-        <ion-header>
-          <ion-card-title>MEMBERSHIP</ion-card-title>
+      <ion-card class="menu-card">
+        <ion-header class="menu-header">
+          <ion-card-title class="menu-card-title">MEMBERSHIP</ion-card-title>
         </ion-header>
         <img  src="../assets/GravitySideRoom1.jpg" >
       </ion-card>
     </ion-col>
   </ion-row>
+  <!-- END OF MENU CARDS -->
   <ion-row>
     <ion-col class="welcome-container">
       <ion-row>
@@ -150,5 +150,63 @@
       </video>
     </ion-col>
   </ion-row>
+  <!-- BEGINNING OF TRAINER CARDS  --> 
+  <ion-row>
+    <ion-col class="ion-text-center">
+      <h1 #trainers><span class="trueno-outline">OUR </span>
+        <span class="trueno">TRAINERS</span></h1>
+        <p>Our dedicated trainers provide many programs for individuals or groups. 
+          Contact a trainer now.</p>
+    </ion-col>
+  </ion-row>
+  <ion-row class="card-container">
+    <ion-col size-xs="12" size-sm="12" size-md="6" size-lg="6" size-xl="3">
+      <ion-card class="trainer-card">
+        <img src="../assets/trainer-andrew-johnson.jpg" >
+
+            <!-- <ion-card-title class="trainer-card-title">ANDREW JOHNSON</ion-card-title> -->
+
+
+            <ion-card-title class="trainer-card-title">Andrew Johnson</ion-card-title>
+            <ion-card-subtitle class="trainer-card-subtitle">
+              12 stuff
+            </ion-card-subtitle>
+          
+      </ion-card>
+    </ion-col>
+    <ion-col size-xs="12" size-sm="12" size-md="6" size-lg="6" size-xl="3">
+      <ion-card class="trainer-card">
+        <ion-header class="trainer-header">
+          <ion-card-title class="trainer-card-title">DARIO JONES</ion-card-title>
+        </ion-header>
+        <img src="../assets/trainer-dario-jones.jpg" >
+      </ion-card>
+    </ion-col>
+    <ion-col size-xs="12" size-sm="12" size-md="6" size-lg="6" size-xl="3">
+      <ion-card class="trainer-card">
+        <ion-header class="trainer-header">
+          <ion-card-title class="trainer-card-title">DARREN FLORO-BRYANT</ion-card-title>
+        </ion-header>
+        <img  src="../assets/trainer-darren-floro-bryant.jpg" >
+      </ion-card>
+    </ion-col>
+    <ion-col size-xs="12" size-sm="12" size-md="6" size-lg="6" size-xl="3">
+      <ion-card class="trainer-card">
+        <ion-header class="trainer-header">
+          <ion-card-title class="trainer-card-title">DAVID SIGLER</ion-card-title>
+        </ion-header>
+        <img  src="../assets/trainer-david-sigler.jpg" >
+      </ion-card>
+    </ion-col>
+    <ion-col size-xs="12" size-sm="12" size-md="6" size-lg="6" size-xl="3">
+      <ion-card class="trainer-card">
+        <ion-header class="trainer-header">
+          <ion-card-title class="trainer-card-title">KYLE KREBS</ion-card-title>
+        </ion-header>
+        <img  src="../assets/trainer-kyle-krebs.jpg" >
+      </ion-card>
+    </ion-col>
+  </ion-row>
+  <!-- END OF TRAINER CARDS -->
 </ion-grid>
 </ion-content>

@@ -17,11 +17,11 @@ export class AppComponent implements OnInit {
       url: '/home',
       icon: 'heart'
     },
-    // {
-    //   title: 'Inbox',
-    //   url: '/folder/Inbox',
-    //   icon: 'mail'
-    // },
+    {
+      title: 'Training',
+      url: '/training',
+      icon: 'barbell'
+    },
     // {
     //   title: 'Outbox',
     //   url: '/folder/Outbox',

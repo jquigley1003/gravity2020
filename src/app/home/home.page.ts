@@ -1,5 +1,6 @@
-import { Component, ViewChild, AfterViewInit, ViewChildren, ElementRef, ɵbypassSanitizationTrustScript } from '@angular/core';
+import { Component, ViewChild, AfterViewInit, ViewChildren, ElementRef } from '@angular/core';
 import { IonContent, AnimationController, Animation, IonCard } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -7,11 +8,12 @@ import { IonContent, AnimationController, Animation, IonCard } from '@ionic/angu
   styleUrls: ['./home.page.scss'],
 })
 export class HomePage implements AfterViewInit {
-  @ViewChild(IonContent, { static: false }) content: IonContent;
-  @ViewChild('training', { static: false }) myTraining: ElementRef;
-  @ViewChild('classes', { static: false }) myClasses: ElementRef;
-  @ViewChild('massage', { static: false }) myMassage: ElementRef;
-  @ViewChild('membership', { static: false }) myMembership: ElementRef;
+  @ViewChild(IonContent) content: IonContent;
+  @ViewChild('training') myTraining: ElementRef;
+  @ViewChild('classes') myClasses: ElementRef;
+  @ViewChild('massage') myMassage: ElementRef;
+  @ViewChild('membership') myMembership: ElementRef;
+  @ViewChild('trainers') myTrainers: ElementRef;
 
   trainingAnim: Animation;
   classesAnim: Animation;
@@ -115,7 +117,9 @@ export class HomePage implements AfterViewInit {
     },
   ];
 
-  constructor(private animationCtrl: AnimationController) { }
+  constructor(
+    private animationCtrl: AnimationController,
+    private router: Router) { }
 
   ngAfterViewInit() {
     this.trainingAnim = this.animationCtrl.create('myTrainingAnim');
@@ -156,4 +160,11 @@ export class HomePage implements AfterViewInit {
   classesHover() {
     this.classesAnim.play();
   }
+
+  async goToTraining() {
+    // this.router.navigate(['/training']);
+    const endElem = await this.myTrainers.nativeElement.getBoundingClientRect();
+    await this.content.scrollToPoint(endElem.x, endElem.y, 1000);
+  }
+
 }
