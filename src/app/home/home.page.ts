@@ -1,6 +1,8 @@
 import { Component, ViewChild, AfterViewInit, ViewChildren, ElementRef } from '@angular/core';
-import { IonContent, AnimationController, Animation, IonCard } from '@ionic/angular';
+import { IonContent, AnimationController, Animation, IonCard, ModalController } from '@ionic/angular';
 import { Router } from '@angular/router';
+
+import { TrainerModalComponent } from '../shared/modals/trainer-modal/trainer-modal.component';
 
 @Component({
   selector: 'app-home',
@@ -119,7 +121,8 @@ export class HomePage implements AfterViewInit {
 
   constructor(
     private animationCtrl: AnimationController,
-    private router: Router) { }
+    private router: Router,
+    private modalCtrl: ModalController) { }
 
   ngAfterViewInit() {
     this.trainingAnim = this.animationCtrl.create('myTrainingAnim');
@@ -165,6 +168,18 @@ export class HomePage implements AfterViewInit {
     // this.router.navigate(['/training']);
     const endElem = await this.myTrainers.nativeElement.getBoundingClientRect();
     await this.content.scrollToPoint(endElem.x, endElem.y, 1000);
+  }
+
+  async presentTrainerModal() {
+    const modal = await this.modalCtrl.create({
+      component: TrainerModalComponent,
+      swipeToClose: true,
+      presentingElement: await this.modalCtrl.getTop(),
+      componentProps: {
+
+      }
+    });
+    return await  modal.present();
   }
 
 }

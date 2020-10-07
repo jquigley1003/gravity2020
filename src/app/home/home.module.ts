@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 import { HomePageRoutingModule } from './home-routing.module';
+import { TrainerModalModule } from '../shared/modals/trainer-modal/trainer-modal.module';
 
 import { HomePage } from './home.page';
 
@@ -13,7 +14,8 @@ import { HomePage } from './home.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    HomePageRoutingModule
+    HomePageRoutingModule,
+    TrainerModalModule
   ],
   declarations: [HomePage]
 })
