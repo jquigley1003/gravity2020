@@ -1,15 +1,18 @@
-import { Component, ViewChild, AfterViewInit, ViewChildren, ElementRef } from '@angular/core';
-import { IonContent, AnimationController, Animation, IonCard, ModalController } from '@ionic/angular';
+import { Component, ViewChild, AfterViewInit, ViewChildren, ElementRef, OnInit, OnDestroy } from '@angular/core';
+import { IonContent, AnimationController, Animation, IonCard, ModalController, IonRouterOutlet } from '@ionic/angular';
 import { Router } from '@angular/router';
 
+import { Observable } from 'rxjs';
+
 import { TrainerModalComponent } from '../shared/modals/trainer-modal/trainer-modal.component';
+import { TrainerService } from '../shared/services/trainer.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.page.html',
   styleUrls: ['./home.page.scss'],
 })
-export class HomePage implements AfterViewInit {
+export class HomePage implements OnInit, AfterViewInit, OnDestroy {
   @ViewChild(IonContent) content: IonContent;
   @ViewChild('training') myTraining: ElementRef;
   @ViewChild('classes') myClasses: ElementRef;
@@ -20,7 +23,7 @@ export class HomePage implements AfterViewInit {
   trainingAnim: Animation;
   classesAnim: Animation;
   showFAB:boolean = false;
-
+  allTrainers$: Observable<any>;
 
   slideOpts = {
     autoplay: {
@@ -120,9 +123,15 @@ export class HomePage implements AfterViewInit {
   ];
 
   constructor(
+    private trainerService: TrainerService,
     private animationCtrl: AnimationController,
     private router: Router,
-    private modalCtrl: ModalController) { }
+    private modalCtrl: ModalController,
+    private routerOutlet: IonRouterOutlet) { }
+
+  ngOnInit() {
+    this.getAllTrainers();
+  }  
 
   ngAfterViewInit() {
     this.trainingAnim = this.animationCtrl.create('myTrainingAnim');
@@ -144,6 +153,10 @@ export class HomePage implements AfterViewInit {
         { offset: 0.5, transform: 'scale(2)' },
         { offset: 1, transform: 'scale(1)' }
       ]);
+  }
+
+  async getAllTrainers() {
+    this.allTrainers$ = this.trainerService.getAllTrainers()
   }
 
   showFabButton() {
@@ -174,7 +187,7 @@ export class HomePage implements AfterViewInit {
     const modal = await this.modalCtrl.create({
       component: TrainerModalComponent,
       swipeToClose: true,
-      presentingElement: await this.modalCtrl.getTop(),
+      presentingElement: this.routerOutlet.nativeEl,
       componentProps: {
 
       }

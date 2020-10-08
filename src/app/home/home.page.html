@@ -199,6 +199,15 @@
         <img  src="../assets/trainer-kyle-krebs.jpg" >
       </ion-card>
     </ion-col>
+    <ion-col *ngFor="let trainer of allTrainers$ | async"
+    size-xs="12" size-sm="12" size-md="6" size-lg="6" size-xl="3">
+    <ion-card class="trainer-card">
+      <img src="{{ trainer.imageUrl }}" >
+      <ion-card-title class="trainer-card-title">
+        {{ trainer.displayName.firstName + ' ' + trainer.displayName.lastName }}
+      </ion-card-title>
+    </ion-card>
+    </ion-col>
   </ion-row>
   <!-- END OF TRAINER CARDS -->
 </ion-grid>
