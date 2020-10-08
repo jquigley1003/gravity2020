@@ -191,7 +191,10 @@ export class HomePage implements OnInit, AfterViewInit {
       componentProps: {
         imageUrl: trainer.imageUrl,
         name: trainer.displayName.firstName + ' ' + trainer.displayName.lastName,
-        description: trainer.description
+        description: trainer.description,
+        phone: trainer.contact.phone,
+        email: trainer.contact.email,
+        website: trainer.contact.websiteUrl
       }
     });
     return await  modal.present();

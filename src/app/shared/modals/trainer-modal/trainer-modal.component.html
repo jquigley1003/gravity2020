@@ -6,14 +6,30 @@
     </ion-buttons>
   </ion-toolbar>
   <ion-grid>
-    <ion-col>
+    <ion-col size="12">
       <ion-header class="ion-text-center">
         <img src="{{ imageUrl }}">
       </ion-header>
     </ion-col>
-    <ion-col>
+    <ion-col size="12">
       <p>{{ description }}</p>
     </ion-col>
-  </ion-grid>>
+    <ion-col size="12">
+      <ion-list>
+        <ion-list-header lines="inset">
+          <ion-label style="font-size: 2vh; font-weight: bold">Contact</ion-label>
+        </ion-list-header>
+        <ion-item>
+          Phone: {{ phone }}
+        </ion-item>
+        <ion-item>
+          Email: {{ email }}
+        </ion-item>
+        <ion-item *ngIf="website !=''">
+          Website: {{ website }}
+        </ion-item>
+      </ion-list>
+    </ion-col>
+  </ion-grid>
 </ion-content>
 
