@@ -12,7 +12,7 @@ import { TrainerService } from '../shared/services/trainer.service';
   templateUrl: './home.page.html',
   styleUrls: ['./home.page.scss'],
 })
-export class HomePage implements OnInit, AfterViewInit, OnDestroy {
+export class HomePage implements OnInit, AfterViewInit {
   @ViewChild(IonContent) content: IonContent;
   @ViewChild('training') myTraining: ElementRef;
   @ViewChild('classes') myClasses: ElementRef;
@@ -156,7 +156,7 @@ export class HomePage implements OnInit, AfterViewInit, OnDestroy {
   }
 
   async getAllTrainers() {
-    this.allTrainers$ = this.trainerService.getAllTrainers()
+    this.allTrainers$ = this.trainerService.getAllTrainers();
   }
 
   showFabButton() {
@@ -183,13 +183,15 @@ export class HomePage implements OnInit, AfterViewInit, OnDestroy {
     await this.content.scrollToPoint(endElem.x, endElem.y, 1000);
   }
 
-  async presentTrainerModal() {
+  async presentTrainerModal(trainer) {
     const modal = await this.modalCtrl.create({
       component: TrainerModalComponent,
       swipeToClose: true,
       presentingElement: this.routerOutlet.nativeEl,
       componentProps: {
-
+        imageUrl: trainer.imageUrl,
+        name: trainer.displayName.firstName + ' ' + trainer.displayName.lastName,
+        description: trainer.description
       }
     });
     return await  modal.present();

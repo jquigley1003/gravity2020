@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { ModalController } from '@ionic/angular';
+import { ModalController, NavParams } from '@ionic/angular';
 
 @Component({
   selector: 'app-trainer-modal',
@@ -8,8 +8,13 @@ import { ModalController } from '@ionic/angular';
   styleUrls: ['./trainer-modal.component.scss'],
 })
 export class TrainerModalComponent implements OnInit {
+  imageUrl: string = this.navParams.get('imageUrl');
+  name: string = this.navParams.get('name');
+  description: string = this.navParams.get('description');
 
-  constructor(private modalCtrl: ModalController) { }
+  constructor(
+    private modalCtrl: ModalController,
+    private navParams: NavParams) { }
 
   ngOnInit() {}
 

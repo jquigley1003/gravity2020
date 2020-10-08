@@ -160,7 +160,7 @@
     </ion-col>
   </ion-row>
   <ion-row class="card-container">
-    <ion-col size-xs="12" size-sm="12" size-md="6" size-lg="6" size-xl="3">
+    <!-- <ion-col size-xs="12" size-sm="12" size-md="6" size-lg="6" size-xl="3">
       <ion-card class="trainer-card" (click)="presentTrainerModal()">
         <img src="../assets/trainer-andrew-johnson.jpg" >
         <ion-card-title class="trainer-card-title">Andrew Johnson</ion-card-title>
@@ -198,10 +198,10 @@
         </ion-header>
         <img  src="../assets/trainer-kyle-krebs.jpg" >
       </ion-card>
-    </ion-col>
+    </ion-col> -->
     <ion-col *ngFor="let trainer of allTrainers$ | async"
     size-xs="12" size-sm="12" size-md="6" size-lg="6" size-xl="3">
-    <ion-card class="trainer-card">
+    <ion-card class="trainer-card" (click)="presentTrainerModal(trainer)">
       <img src="{{ trainer.imageUrl }}" >
       <ion-card-title class="trainer-card-title">
         {{ trainer.displayName.firstName + ' ' + trainer.displayName.lastName }}

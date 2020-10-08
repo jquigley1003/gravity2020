@@ -1,12 +1,19 @@
 <ion-content>
   <ion-toolbar class="ion-text-center">
-    <h1>Trainer Modal</h1>
+    <h1>{{ name }}</h1>
     <ion-buttons slot="end">
       <ion-button fill="clear" (click)="closeModal()">Close</ion-button>
     </ion-buttons>
   </ion-toolbar>
-  <p>
-    trainer-modal works!
-  </p>
+  <ion-grid>
+    <ion-col>
+      <ion-header class="ion-text-center">
+        <img src="{{ imageUrl }}">
+      </ion-header>
+    </ion-col>
+    <ion-col>
+      <p>{{ description }}</p>
+    </ion-col>
+  </ion-grid>>
 </ion-content>
 
