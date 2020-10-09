@@ -17,6 +17,17 @@
     <ion-col size="12">
       <ion-list>
         <ion-list-header lines="inset">
+          <ion-label style="font-size: 2vh; font-weight: bold">Degrees & Certifications</ion-label>
+        </ion-list-header>
+        <ion-item *ngIf="degrees != ''">
+          {{ degrees }}
+        </ion-item>
+        <ion-item *ngIf="certifications != ''">
+          {{ certifications }}
+        </ion-item>
+      </ion-list>
+      <ion-list>
+        <ion-list-header lines="inset">
           <ion-label style="font-size: 2vh; font-weight: bold">Contact</ion-label>
         </ion-list-header>
         <ion-item>
@@ -29,6 +40,22 @@
           Website: {{ website }}
         </ion-item>
       </ion-list>
+      <ion-row class="ion-justify-content-center">
+        <ion-col class="ion-text-center">
+          <a href="{{ facebookUrl }}" target="_blank">
+            <ion-icon *ngIf="facebookUrl !=''" 
+            name="logo-facebook" style="font-size: 2em;"> </ion-icon>
+          </a>
+          <a href="{{ instagramUrl }}" target="_blank">
+            <ion-icon *ngIf="instagramUrl !=''" 
+            name="logo-instagram" style="font-size: 2em;"></ion-icon>
+          </a> 
+          <a href="{{ twitterUrl }}" target="_blank">
+            <ion-icon  *ngIf="twitterUrl !=''" 
+            name="logo-twitter" style="font-size: 2em;"></ion-icon>
+          </a>
+        </ion-col>
+      </ion-row>
     </ion-col>
   </ion-grid>
 </ion-content>

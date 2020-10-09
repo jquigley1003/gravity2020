@@ -194,7 +194,12 @@ export class HomePage implements OnInit, AfterViewInit {
         description: trainer.description,
         phone: trainer.contact.phone,
         email: trainer.contact.email,
-        website: trainer.contact.websiteUrl
+        website: trainer.contact.websiteUrl,
+        degrees: trainer.degrees,
+        certifications: trainer.certifications,
+        facebookUrl: trainer.contact.facebookUrl,
+        instagramUrl: trainer.contact.instagramUrl,
+        twitterUrl: trainer.contact.twitterUrl
       }
     });
     return await  modal.present();

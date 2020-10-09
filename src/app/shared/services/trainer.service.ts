@@ -31,7 +31,6 @@ export class TrainerService implements OnDestroy {
       },
     err => console.log('Error retrieving Trainers')
     );
-    console.log('trainers from service', this._allTrainers);
   }
 
   getAllTrainers() {
