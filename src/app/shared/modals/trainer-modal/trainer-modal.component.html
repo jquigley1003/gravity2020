@@ -1,10 +1,12 @@
 <ion-content>
-  <ion-toolbar class="ion-text-center">
-    <h1>{{ name }}</h1>
+  <ion-toolbar>
     <ion-buttons slot="end">
-      <ion-button fill="clear" (click)="closeModal()">Close</ion-button>
+      <ion-button (click)="closeModal()">
+        <ion-icon  size="large" name="close-circle-outline"></ion-icon>
+      </ion-button>
     </ion-buttons>
   </ion-toolbar>
+  <h1 class="ion-text-center">{{ name }}</h1>
   <ion-grid>
     <ion-col size="12">
       <ion-header class="ion-text-center">
@@ -58,5 +60,12 @@
       </ion-row>
     </ion-col>
   </ion-grid>
+  <ion-toolbar class="ion-text-center">
+    <ion-buttons slot="end">
+      <ion-button (click)="closeModal()">
+        <ion-icon  size="large" name="close-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
 </ion-content>
 
