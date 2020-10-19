@@ -21,25 +21,32 @@
         <ion-list-header lines="inset">
           <ion-label style="font-size: 2vh; font-weight: bold">Degrees & Certifications</ion-label>
         </ion-list-header>
-        <ion-item *ngIf="degrees != ''">
-          {{ degrees }}
-        </ion-item>
-        <ion-item *ngIf="certifications != ''">
-          {{ certifications }}
-        </ion-item>
+        <ng-container *ngIf="degrees != ''">
+          <ion-item *ngFor="let deg of degrees">
+            {{ deg }}
+          </ion-item>
+        </ng-container>
+        <ng-container *ngIf="certifications != ''">
+          <ion-item *ngFor="let cert of certifications">
+            {{ cert }}
+          </ion-item>
+        </ng-container>
       </ion-list>
       <ion-list>
         <ion-list-header lines="inset">
           <ion-label style="font-size: 2vh; font-weight: bold">Contact</ion-label>
         </ion-list-header>
-        <ion-item>
+        <ion-item (click)="callPhone(phone)">
           Phone: {{ phone }}
+          <ion-icon slot="end" name="call"></ion-icon>
         </ion-item>
         <ion-item>
           Email: {{ email }}
         </ion-item>
         <ion-item *ngIf="website !=''">
-          Website: {{ website }}
+          <a href="{{ website }}" target="_blank">
+            Trainer Website
+          </a>
         </ion-item>
       </ion-list>
       <ion-row class="ion-justify-content-center">

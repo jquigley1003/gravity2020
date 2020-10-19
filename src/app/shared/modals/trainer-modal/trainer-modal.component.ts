@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-
 import { ModalController, NavParams } from '@ionic/angular';
 
 @Component({
@@ -8,6 +7,7 @@ import { ModalController, NavParams } from '@ionic/angular';
   styleUrls: ['./trainer-modal.component.scss'],
 })
 export class TrainerModalComponent implements OnInit {
+
   imageUrl: string = this.navParams.get('imageUrl');
   name: string = this.navParams.get('name');
   description: string = this.navParams.get('description');
@@ -25,6 +25,10 @@ export class TrainerModalComponent implements OnInit {
     private navParams: NavParams) { }
 
   ngOnInit() {}
+
+  callPhone(phoneNumber) {
+    window.open(`tel:${phoneNumber}`, '_system');
+  }
 
   closeModal() {
     this.modalCtrl.dismiss();
