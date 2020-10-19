@@ -37,30 +37,36 @@
           <ion-label style="font-size: 2vh; font-weight: bold">Contact</ion-label>
         </ion-list-header>
         <ion-item (click)="callPhone(phone)">
-          Phone: {{ phone }}
-          <ion-icon slot="end" name="call"></ion-icon>
+          {{ phone }}
+          <ion-icon slot="start" name="call-outline"></ion-icon>
         </ion-item>
         <ion-item>
-          Email: {{ email }}
+          {{ email }}
+          <ion-icon slot="start" name="mail-outline"></ion-icon>
         </ion-item>
         <ion-item *ngIf="website !=''">
           <a href="{{ website }}" target="_blank">
             Trainer Website
           </a>
+          <ion-icon slot="start" name="desktop-outline"></ion-icon>
         </ion-item>
       </ion-list>
       <ion-row class="ion-justify-content-center">
-        <ion-col class="ion-text-center">
+        <ion-col *ngIf="facebookUrl !=''" class="ion-text-center">
           <a href="{{ facebookUrl }}" target="_blank">
-            <ion-icon *ngIf="facebookUrl !=''" 
+            <ion-icon
             name="logo-facebook" style="font-size: 2em;"> </ion-icon>
           </a>
+        </ion-col>
+        <ion-col *ngIf="instagramUrl !=''" class="ion-text-center">
           <a href="{{ instagramUrl }}" target="_blank">
-            <ion-icon *ngIf="instagramUrl !=''" 
+            <ion-icon 
             name="logo-instagram" style="font-size: 2em;"></ion-icon>
-          </a> 
+          </a>
+        </ion-col>
+        <ion-col  *ngIf="twitterUrl !=''" class="ion-text-center">
           <a href="{{ twitterUrl }}" target="_blank">
-            <ion-icon  *ngIf="twitterUrl !=''" 
+            <ion-icon 
             name="logo-twitter" style="font-size: 2em;"></ion-icon>
           </a>
         </ion-col>
