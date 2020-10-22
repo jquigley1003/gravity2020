@@ -25,34 +25,35 @@
 <ion-grid class="ion-no-padding">
   <ion-row>
     <ion-col class="slide-container">
-      <ion-slides [options]="slideOpts" pager="true">
+      <ion-slides [options]="slideOpts" pager="true"
+      (ionSlideDidChange)="startImgAnim()">
         <ion-slide>
           <div class="slide-text">
             <span class="trueno-outline">ATLANTA'S PREMIER</span><br>
             <span class="trueno">COMMUNITY GYM</span>
           </div>
-          <img src="../assets/GymBlueRoom1.jpg" >
+          <img #mySlideImg1 src="../assets/GymBlueRoom1.jpg" >
         </ion-slide>
         <ion-slide>
           <div class="slide-text">
             <span class="trueno-outline">ATLANTA'S PREMIER</span><br>
             <span class="trueno">COMMUNITY GYM</span>
           </div>
-          <img src="../assets/GymBlueRoom2.jpg" >
+          <img #mySlideImg2 src="../assets/GymBlueRoom2.jpg" >
         </ion-slide>
         <ion-slide>
           <div class="slide-text">
             <span class="trueno-outline">ATLANTA'S PREMIER</span><br>
             <span class="trueno">COMMUNITY GYM</span>
           </div>
-          <img src="../assets/GymMaroonRoom1.jpg" >
+          <img #mySlideImg3 src="../assets/GymMaroonRoom1.jpg" >
         </ion-slide>
         <ion-slide>
           <div class="slide-text">
             <span class="trueno-outline">ATLANTA'S PREMIER</span><br>
             <span class="trueno">COMMUNITY GYM</span>
           </div>
-          <img src="../assets/GymMaroonRoom2.jpg" >
+          <img #mySlideImg4 src="../assets/GymMaroonRoom2.jpg" >
         </ion-slide>
       </ion-slides>
     </ion-col>

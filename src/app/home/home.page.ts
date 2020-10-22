@@ -1,5 +1,5 @@
 import { Component, ViewChild, AfterViewInit, ViewChildren, ElementRef, OnInit, OnDestroy } from '@angular/core';
-import { IonContent, AnimationController, Animation, IonCard, ModalController, IonRouterOutlet } from '@ionic/angular';
+import { IonContent, AnimationController, Animation, IonCard, ModalController, IonRouterOutlet, IonSlides } from '@ionic/angular';
 import { Router } from '@angular/router';
 
 import { Observable } from 'rxjs';
@@ -14,14 +14,24 @@ import { TrainerService } from '../shared/services/trainer.service';
 })
 export class HomePage implements OnInit, AfterViewInit {
   @ViewChild(IonContent) content: IonContent;
+  @ViewChild(IonSlides) slides: IonSlides;
   @ViewChild('training') myTraining: ElementRef;
   @ViewChild('classes') myClasses: ElementRef;
   @ViewChild('massage') myMassage: ElementRef;
   @ViewChild('membership') myMembership: ElementRef;
   @ViewChild('trainers') myTrainers: ElementRef;
+  @ViewChild('mySlideImg1') mySlideImg1: ElementRef;
+  @ViewChild('mySlideImg2') mySlideImg2: ElementRef;
+  @ViewChild('mySlideImg3') mySlideImg3: ElementRef;
+  @ViewChild('mySlideImg4') mySlideImg4: ElementRef;
+
 
   trainingAnim: Animation;
   classesAnim: Animation;
+  imageAnim1: Animation;
+  imageAnim2: Animation;
+  imageAnim3: Animation;
+  imageAnim4: Animation;
   showFAB:boolean = false;
   allTrainers$: Observable<any>;
 
@@ -30,6 +40,7 @@ export class HomePage implements OnInit, AfterViewInit {
       delay: 3000,
     },
     loop: true,
+    parallax: true,
     on: {
       beforeInit() {
         const swiper = this;
@@ -41,6 +52,7 @@ export class HomePage implements OnInit, AfterViewInit {
           watchSlidesProgress: true,
           spaceBetween: 0,
           virtualTranslate: true,
+          parallax: true,
         };
         swiper.params = Object.assign(swiper.params, overwriteParams);
         swiper.params = Object.assign(swiper.originalParams, overwriteParams);
@@ -153,6 +165,66 @@ export class HomePage implements OnInit, AfterViewInit {
         { offset: 0.5, transform: 'scale(2)' },
         { offset: 1, transform: 'scale(1)' }
       ]);
+
+    this.imageAnim1 = this.animationCtrl.create('myImageAnim1');
+    this.imageAnim1
+      .addElement(this.mySlideImg1.nativeElement)
+      .duration(3000)
+      .keyframes([
+        { offset: 0, transform: 'scale(1)' },
+        { offset: 0.5, transform: 'scale(1.1)' }
+      ]);  
+
+    this.imageAnim2 = this.animationCtrl.create('myImageAnim2');
+    this.imageAnim2
+      .addElement(this.mySlideImg2.nativeElement)
+      .duration(3000)
+      .keyframes([
+        { offset: 0, transform: 'scale(1)' },
+        { offset: 0.5, transform: 'scale(1.1)' }
+      ]);
+
+    this.imageAnim3 = this.animationCtrl.create('myImageAnim3');
+    this.imageAnim3
+      .addElement(this.mySlideImg3.nativeElement)
+      .duration(8000)
+      .keyframes([
+        { offset: 0, transform: 'scale(1)' },
+        { offset: 0.5, transform: 'scale(1.1)' }
+      ]);
+
+    this.imageAnim4 = this.animationCtrl.create('myImageAnim4');
+    this.imageAnim4
+      .addElement(this.mySlideImg4.nativeElement)
+      .duration(8000)
+      .keyframes([
+        { offset: 0, transform: 'scale(1)' },
+        { offset: 0.5, transform: 'scale(1.1)' }
+      ]);
+  }
+
+  async startImgAnim() {
+    await this.slides.getActiveIndex()
+     .then(index => {
+      switch(index) {
+        case 1: {
+          this.imageAnim1.play();
+        }
+        case 2: {
+          this.imageAnim2.play();
+        }
+        case 3: {
+          this.imageAnim3.play();
+        }
+        case 4: {
+          this.imageAnim4.play();
+        }
+        case 5: {
+          this.imageAnim1.play();
+        }
+      }
+       console.log('slide index is: ' + index);
+     })
   }
 
   async getAllTrainers() {
