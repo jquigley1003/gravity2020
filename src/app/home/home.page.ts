@@ -170,37 +170,29 @@ export class HomePage implements OnInit, AfterViewInit {
     this.imageAnim1
       .addElement(this.mySlideImg1.nativeElement)
       .duration(3000)
-      .keyframes([
-        { offset: 0, transform: 'scale(1)' },
-        { offset: 0.5, transform: 'scale(1.1)' }
-      ]);  
+      .from('transform', 'scale(1)')
+      .to('transform', 'scale(2)');
 
     this.imageAnim2 = this.animationCtrl.create('myImageAnim2');
     this.imageAnim2
       .addElement(this.mySlideImg2.nativeElement)
       .duration(3000)
-      .keyframes([
-        { offset: 0, transform: 'scale(1)' },
-        { offset: 0.5, transform: 'scale(1.1)' }
-      ]);
+      .from('transform', 'scale(1)')
+      .to('transform', 'scale(2)');
 
     this.imageAnim3 = this.animationCtrl.create('myImageAnim3');
     this.imageAnim3
       .addElement(this.mySlideImg3.nativeElement)
-      .duration(8000)
-      .keyframes([
-        { offset: 0, transform: 'scale(1)' },
-        { offset: 0.5, transform: 'scale(1.1)' }
-      ]);
+      .duration(3000)
+      .from('transform', 'scale(1)')
+      .to('transform', 'scale(2)');
 
     this.imageAnim4 = this.animationCtrl.create('myImageAnim4');
     this.imageAnim4
       .addElement(this.mySlideImg4.nativeElement)
-      .duration(8000)
-      .keyframes([
-        { offset: 0, transform: 'scale(1)' },
-        { offset: 0.5, transform: 'scale(1.1)' }
-      ]);
+      .duration(4000)
+      .from('transform', 'scale(1)')
+      .to('transform', 'scale(2)');
   }
 
   async startImgAnim() {

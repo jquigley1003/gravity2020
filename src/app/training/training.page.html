@@ -9,7 +9,31 @@
 
 <ion-content>
   <ion-grid>
-    <ion-row class="card-container">
+    <ion-row>
+      <ion-col>
+        <h1 #trainers><span class="trueno-outline">OUR </span>
+          <span class="trueno">TRAINERS</span></h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed ipsa culpa in nulla, repellat accusantium? Commodi ex, temporibus fugiat est impedit veritatis atque odit corporis laborum rerum aut ab eos.
+        </p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-list>
+          <ion-item *ngFor="let trainer of allTrainers$ | async">
+            <ion-thumbnail>
+              <img src="{{ trainer.imageUrl }}">
+            </ion-thumbnail>
+            <ion-label>
+              <p>{{ trainer.displayName.firstName }}</p>
+              <p>{{ trainer.displayName.lastName }}</p>
+            </ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+    <!-- <ion-row class="card-container">
       <ion-col size-xs="12" size-sm="12" size-md="6" size-lg="6" size-xl="3">
         <ion-card>
           <ion-header>
@@ -50,7 +74,7 @@
           <img  src="../assets/trainer-kyle-krebs.jpg" >
         </ion-card>
       </ion-col>
-    </ion-row>
+    </ion-row> -->
   </ion-grid>
   
 </ion-content>
