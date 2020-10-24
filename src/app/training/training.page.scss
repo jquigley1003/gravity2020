@@ -1,5 +1,5 @@
 ion-toolbar {
-  --background: transparent;
+
 }
 
 ion-card {
@@ -31,6 +31,11 @@ ion-card-subtitle {
   font-size: 1.0em;
   width: 100%;
   color: #fff;
+}
+
+.logo-header {
+  background: rgba(3, 6, 161, 0.5);
+  border-radius: 50%;
 }
 
 .card-container {

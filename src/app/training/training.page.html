@@ -1,16 +1,18 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-buttons slot="end">
+<ion-header>
+  <ion-toolbar class="ion-padding-top ion-padding-start">
+    <ion-buttons slot="end" class="">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
+    <img (click)="goHome()"
+    slot="start" src="../../assets/Gravity-Logo-Black75.png">
     <ion-title>Training</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content [fullscreen]="true">
   <ion-grid>
     <ion-row>
-      <ion-col>
+      <ion-col class="ion-margin">
         <h1 #trainers><span class="trueno-outline">OUR </span>
           <span class="trueno">TRAINERS</span></h1>
         <p>
@@ -19,15 +21,15 @@
       </ion-col>
     </ion-row>
     <ion-row>
-      <ion-col>
+      <ion-col class="ion-margin">
         <ion-list>
-          <ion-item *ngFor="let trainer of allTrainers$ | async">
+          <ion-item *ngFor="let trainer of allTrainers$ | async"
+          (click)="presentTrainerModal(trainer)" class="ion-margin-bottom">
             <ion-thumbnail>
               <img src="{{ trainer.imageUrl }}">
             </ion-thumbnail>
-            <ion-label>
-              <p>{{ trainer.displayName.firstName }}</p>
-              <p>{{ trainer.displayName.lastName }}</p>
+            <ion-label class="ion-padding-start">
+              <p>{{ trainer.displayName.firstName }} {{ trainer.displayName.lastName }}</p>
             </ion-label>
           </ion-item>
         </ion-list>

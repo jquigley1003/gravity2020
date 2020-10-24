@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { TrainingPageRoutingModule } from './training-routing.module';
 
 import { TrainingPage } from './training.page';
+import { TrainerModalModule } from '../shared/modals/trainer-modal/trainer-modal.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    TrainingPageRoutingModule
+    TrainingPageRoutingModule,
+    TrainerModalModule
   ],
   declarations: [TrainingPage]
 })
