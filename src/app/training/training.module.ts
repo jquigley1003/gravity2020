@@ -8,6 +8,7 @@ import { TrainingPageRoutingModule } from './training-routing.module';
 
 import { TrainingPage } from './training.page';
 import { TrainerModalModule } from '../shared/modals/trainer-modal/trainer-modal.module';
+import { FooterModule } from '../shared/components/footer/footer.module';
 
 @NgModule({
   imports: [
@@ -15,7 +16,8 @@ import { TrainerModalModule } from '../shared/modals/trainer-modal/trainer-modal
     FormsModule,
     IonicModule,
     TrainingPageRoutingModule,
-    TrainerModalModule
+    TrainerModalModule,
+    FooterModule
   ],
   declarations: [TrainingPage]
 })

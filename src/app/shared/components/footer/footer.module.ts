@@ -3,7 +3,8 @@ import { CommonModule } from '@angular/common';
 
 import { IonicModule } from '@ionic/angular';
 
-import { TrainerModalComponent } from './trainer-modal.component';
+import { FooterComponent } from './footer.component';
+
 
 @NgModule({
   imports: [
@@ -11,7 +12,10 @@ import { TrainerModalComponent } from './trainer-modal.component';
     CommonModule
   ],
   declarations: [
-    TrainerModalComponent
+    FooterComponent
+  ],
+  exports: [
+    FooterComponent
   ]
 })
-export class TrainerModalModule { }
+export class FooterModule { }

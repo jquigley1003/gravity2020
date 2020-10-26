@@ -3,7 +3,7 @@
     <ion-buttons slot="end" class="">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <img (click)="goHome()"
+    <img class="logo-header" (click)="goHome()"
     slot="start" src="../../assets/Gravity-Logo-Black75.png">
     <ion-title>Training</ion-title>
   </ion-toolbar>
@@ -12,71 +12,55 @@
 <ion-content [fullscreen]="true">
   <ion-grid>
     <ion-row>
-      <ion-col class="ion-margin">
-        <h1 #trainers><span class="trueno-outline">OUR </span>
-          <span class="trueno">TRAINERS</span></h1>
+      <ion-col class="ion-margin ion-text-center">
+        <h1 #trainers><span class="trueno-outline">TRAINING </span>
+          <span class="trueno">at GRAVITY</span></h1>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed ipsa culpa in nulla, repellat accusantium? Commodi ex, temporibus fugiat est impedit veritatis atque odit corporis laborum rerum aut ab eos.
         </p>
       </ion-col>
     </ion-row>
     <ion-row>
-      <ion-col class="ion-margin">
+      <ion-col class="ion-margin ion-text-center">
+        <h1 #trainers><span class="trueno-outline">OUR </span>
+          <span class="trueno">TRAINERS</span></h1>
+        <p>
+          Scroll through our list of trainers and to find your next mentor. 
+          Click the image or swipe left or right for more information.
+        </p>
+      </ion-col>
+    </ion-row>
+    <ion-row class="list-container">
+      <ion-col class="ion-margin" size-xl="6" offset-xl="3">
         <ion-list>
-          <ion-item *ngFor="let trainer of allTrainers$ | async"
-          (click)="presentTrainerModal(trainer)" class="ion-margin-bottom">
-            <ion-thumbnail>
-              <img src="{{ trainer.imageUrl }}">
-            </ion-thumbnail>
-            <ion-label class="ion-padding-start">
-              <p>{{ trainer.displayName.firstName }} {{ trainer.displayName.lastName }}</p>
-            </ion-label>
-          </ion-item>
+          <ion-item-sliding *ngFor="let trainer of allTrainers$ | async">
+            <ion-item-options side="start">
+              <ion-item-option (click)="presentTrainerModal(trainer)" 
+              color="tertiary">
+                See More
+              </ion-item-option>
+            </ion-item-options>
+            <ion-item lines="full">
+              <ion-thumbnail (click)="presentTrainerModal(trainer)" slot="start">
+                <img style="display:block; height:auto" src="{{ trainer.imageUrl }}">
+              </ion-thumbnail>
+
+                <p style="font-size: 2vh;"><strong>{{ trainer.displayName.firstName }} {{ trainer.displayName.lastName }}
+                </strong></p>
+
+            </ion-item>
+            <ion-item-options side="end">
+              <ion-item-option (click)="callTrainer(trainer.contact.phone)" 
+              color="success">
+                <ion-icon slot="start" name="call-outline"></ion-icon>
+                {{ trainer.contact.phone }}
+              </ion-item-option>
+            </ion-item-options>
+          </ion-item-sliding>
         </ion-list>
       </ion-col>
     </ion-row>
-    <!-- <ion-row class="card-container">
-      <ion-col size-xs="12" size-sm="12" size-md="6" size-lg="6" size-xl="3">
-        <ion-card>
-          <ion-header>
-            <ion-card-title>ANDREW JOHNSON</ion-card-title>
-          </ion-header>
-          <img #training class="training" src="../assets/trainer-andrew-johnson.jpg" >
-        </ion-card>
-      </ion-col>
-      <ion-col size-xs="12" size-sm="12" size-md="6" size-lg="6" size-xl="3">
-        <ion-card>
-          <ion-header>
-            <ion-card-title>DARIO JONES</ion-card-title>
-          </ion-header>
-          <img #classes class="classes" src="../assets/trainer-dario-jones.jpg" >
-        </ion-card>
-      </ion-col>
-      <ion-col size-xs="12" size-sm="12" size-md="6" size-lg="6" size-xl="3">
-        <ion-card>
-          <ion-header>
-            <ion-card-title>DARREN FLORO-BRYANT</ion-card-title>
-          </ion-header>
-          <img  src="../assets/trainer-darren-floro-bryant.jpg" >
-        </ion-card>
-      </ion-col>
-      <ion-col size-xs="12" size-sm="12" size-md="6" size-lg="6" size-xl="3">
-        <ion-card>
-          <ion-header>
-            <ion-card-title>DAVID SIGLER</ion-card-title>
-          </ion-header>
-          <img  src="../assets/trainer-david-sigler.jpg" >
-        </ion-card>
-      </ion-col>
-      <ion-col size-xs="12" size-sm="12" size-md="6" size-lg="6" size-xl="3">
-        <ion-card>
-          <ion-header>
-            <ion-card-title>KYLE KREBS</ion-card-title>
-          </ion-header>
-          <img  src="../assets/trainer-kyle-krebs.jpg" >
-        </ion-card>
-      </ion-col>
-    </ion-row> -->
+    <app-footer></app-footer>
   </ion-grid>
   
 </ion-content>

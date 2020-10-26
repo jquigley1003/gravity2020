@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router} from '@angular/router';
 
-import { IonRouterOutlet, ModalController } from '@ionic/angular';
+import { IonRouterOutlet, ModalController, IonItemSliding, IonList } from '@ionic/angular';
 
 import { Observable } from 'rxjs';
 
@@ -14,6 +14,7 @@ import { TrainerService } from '../shared/services/trainer.service';
   styleUrls: ['./training.page.scss'],
 })
 export class TrainingPage implements OnInit {
+  @ViewChild(IonList) ionList:IonList;
   allTrainers$: Observable<any>;
 
   constructor(
@@ -32,6 +33,7 @@ export class TrainingPage implements OnInit {
   }
 
   async presentTrainerModal(trainer) {
+    this.ionList.closeSlidingItems();
     const modal = await this.modalCtrl.create({
       component: TrainerModalComponent,
       swipeToClose: true,
@@ -51,6 +53,11 @@ export class TrainingPage implements OnInit {
       }
     });
     return await  modal.present();
+  }
+
+  callTrainer(phoneNumber) {
+    this.ionList.closeSlidingItems();
+    window.open(`tel:${phoneNumber}`, '_system');
   }
 
   goHome() {

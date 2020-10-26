@@ -5,9 +5,11 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 import { HomePageRoutingModule } from './home-routing.module';
-import { TrainerModalModule } from '../shared/modals/trainer-modal/trainer-modal.module';
 
 import { HomePage } from './home.page';
+
+import { TrainerModalModule } from '../shared/modals/trainer-modal/trainer-modal.module';
+import { FooterModule } from '../shared/components/footer/footer.module';
 
 @NgModule({
   imports: [
@@ -15,7 +17,8 @@ import { HomePage } from './home.page';
     FormsModule,
     IonicModule,
     HomePageRoutingModule,
-    TrainerModalModule
+    TrainerModalModule,
+    FooterModule
   ],
   declarations: [HomePage]
 })
