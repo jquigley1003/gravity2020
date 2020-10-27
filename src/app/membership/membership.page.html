@@ -5,7 +5,7 @@
     </ion-buttons>
     <img class="logo-header" (click)="goHome()"
     slot="start" src="../../assets/Gravity-Logo-Black75.png">
-    <ion-title>Training</ion-title>
+    <ion-title>Membership</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -13,7 +13,7 @@
   <ion-grid>
     <ion-row>
       <ion-col class="ion-margin ion-text-center">
-        <h1 #trainers><span class="trueno-outline">TRAINING </span>
+        <h1 #trainers><span class="trueno-outline">MEMBERSHIP </span>
           <span class="trueno">at GRAVITY</span></h1>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed ipsa culpa in nulla, repellat accusantium? Commodi ex, temporibus fugiat est impedit veritatis atque odit corporis laborum rerum aut ab eos.
@@ -22,21 +22,9 @@
     </ion-row>
     <ion-row>
       <ion-col class="ion-margin ion-text-center">
-        <h1 #trainers><span class="trueno-outline">OUR </span>
-          <span class="trueno">TRAINERS</span></h1>
-          <p>Our dedicated trainers provide many programs for individuals or groups. 
-            Contact a trainer now.</p>
-      </ion-col>
-    </ion-row>
-    <ion-row class="card-container">
-      <ion-col *ngFor="let trainer of allTrainers$ | async"
-      size-xs="12" size-sm="12" size-md="6" size-lg="6" size-xl="3">
-      <ion-card class="trainer-card" (click)="presentTrainerModal(trainer)">
-        <img src="{{ trainer.imageUrl }}" >
-        <ion-card-title class="trainer-card-title">
-          {{ trainer.displayName.firstName + ' ' + trainer.displayName.lastName }}
-        </ion-card-title>
-      </ion-card>
+        <h1 #trainers><span class="trueno-outline">JOIN </span>
+          <span class="trueno">GRAVITY</span></h1>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At saepe et modi iste fugiat nesciunt culpa, neque sed! Ex, necessitatibus provident deleniti dicta magnam nam iste sit corrupti quo? Distinctio!.</p>
       </ion-col>
     </ion-row>
     <app-footer></app-footer>

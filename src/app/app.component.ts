@@ -22,16 +22,21 @@ export class AppComponent implements OnInit {
       url: '/training',
       icon: 'barbell'
     },
-    // {
-    //   title: 'Outbox',
-    //   url: '/folder/Outbox',
-    //   icon: 'paper-plane'
-    // },
-    // {
-    //   title: 'Favorites',
-    //   url: '/folder/Favorites',
-    //   icon: 'heart'
-    // },
+    {
+      title: 'Classes',
+      url: '/classes',
+      icon: 'people'
+    },
+    {
+      title: 'Massage',
+      url: '/massage',
+      icon: 'man'
+    },
+    {
+      title: 'Membership',
+      url: '/membership',
+      icon: 'card'
+    }
     // {
     //   title: 'Archived',
     //   url: '/folder/Archived',
@@ -48,7 +53,6 @@ export class AppComponent implements OnInit {
     //   icon: 'warning'
     // }
   ];
-  public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
 
   constructor(
     private platform: Platform,

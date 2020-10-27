@@ -17,11 +17,6 @@
   <div class="logo-home">
     <img src="../assets/Gravity-Logo-400.png" >
   </div>
-  <!-- <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">{{ folder }}</ion-title>
-    </ion-toolbar>
-  </ion-header> -->
 <ion-grid class="ion-no-padding">
   <ion-row>
     <ion-col class="slide-container">
@@ -90,7 +85,7 @@
         </ion-card>
     </ion-col>
     <ion-col size-xs="12" size-sm="12" size-md="6" size-lg="6" size-xl="3">
-      <ion-card class="menu-card" (mouseover)="classesHover()">
+      <ion-card class="menu-card" tappable (click)="goToClasses()" (mouseover)="classesHover()">
         <ion-header class="menu-header">
           <ion-card-title class="menu-card-title">CLASSES</ion-card-title>
         </ion-header>
@@ -98,19 +93,19 @@
       </ion-card>
     </ion-col>
     <ion-col size-xs="12" size-sm="12" size-md="6" size-lg="6" size-xl="3">
-      <ion-card class="menu-card">
+      <ion-card class="menu-card" tappable (click)="goToMassage()" (mouseover)="massageHover()">
         <ion-header class="menu-header">
           <ion-card-title class="menu-card-title">MASSAGE</ion-card-title>
         </ion-header>
-        <img  src="../assets/GravityFrontMaroon1.jpg" >
+        <img #massage class="massage" src="../assets/GravityFrontMaroon1.jpg" >
       </ion-card>
     </ion-col>
     <ion-col size-xs="12" size-sm="12" size-md="6" size-lg="6" size-xl="3">
-      <ion-card class="menu-card">
+      <ion-card class="menu-card" tappable (click)="goToMembership()" (mouseover)="membershipHover()">
         <ion-header class="menu-header">
           <ion-card-title class="menu-card-title">MEMBERSHIP</ion-card-title>
         </ion-header>
-        <img  src="../assets/GravitySideRoom1.jpg" >
+        <img #membership class="membership" src="../assets/GravitySideRoom1.jpg" >
       </ion-card>
     </ion-col>
   </ion-row>
@@ -150,27 +145,49 @@
       </video>
     </ion-col>
   </ion-row>
-  <!-- BEGINNING OF TRAINER CARDS  --> 
+  <!-- BEGINNING OF TRAINER LIST  --> 
   <ion-row>
     <ion-col class="ion-text-center">
       <h1 #trainers><span class="trueno-outline">OUR </span>
         <span class="trueno">TRAINERS</span></h1>
-        <p>Our dedicated trainers provide many programs for individuals or groups. 
-          Contact a trainer now.</p>
+        <p>
+          Scroll through our list of trainers below to find your next mentor. 
+          Click the trainer image for full information, or swipe for contact details.<br>
+          For more training information, visit our <a routerLink="/training">Training Page</a>
+        </p>
     </ion-col>
   </ion-row>
-  <ion-row class="card-container">
-    <ion-col *ngFor="let trainer of allTrainers$ | async"
-    size-xs="12" size-sm="12" size-md="6" size-lg="6" size-xl="3">
-    <ion-card class="trainer-card" (click)="presentTrainerModal(trainer)">
-      <img src="{{ trainer.imageUrl }}" >
-      <ion-card-title class="trainer-card-title">
-        {{ trainer.displayName.firstName + ' ' + trainer.displayName.lastName }}
-      </ion-card-title>
-    </ion-card>
+  <ion-row class="list-container">
+    <ion-col class="ion-margin" size-xl="6" offset-xl="3">
+      <ion-list>
+        <ion-item-sliding *ngFor="let trainer of allTrainers$ | async">
+          <ion-item-options side="start">
+            <ion-item-option (click)="presentTrainerModal(trainer)" 
+            color="tertiary">
+              See More
+            </ion-item-option>
+          </ion-item-options>
+          <ion-item lines="full" class="ion-padding-bottom">
+            <ion-thumbnail (click)="presentTrainerModal(trainer)" slot="start">
+              <img style="display:block; height:auto;" src="{{ trainer.imageUrl }}">
+            </ion-thumbnail>
+
+              <p style="font-size: 3vh;"><strong>{{ trainer.displayName.firstName }} {{ trainer.displayName.lastName }}
+              </strong></p>
+
+          </ion-item>
+          <ion-item-options side="end">
+            <ion-item-option (click)="callTrainer(trainer.contact.phone)" 
+            color="success">
+              <ion-icon slot="start" name="call-outline"></ion-icon>
+              {{ trainer.contact.phone }}
+            </ion-item-option>
+          </ion-item-options>
+        </ion-item-sliding>
+      </ion-list>
     </ion-col>
   </ion-row>
-  <!-- END OF TRAINER CARDS -->
+  <!-- END OF TRAINER LIST -->
   <app-footer></app-footer>
 </ion-grid>
 </ion-content>

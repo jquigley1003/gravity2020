@@ -21,6 +21,21 @@ ion-fab-button {
   --border-width: 2px;
 }
 
+ion-list {
+  background: transparent;
+}
+
+ion-item {
+  --background: rgba(255,255,255, .5);
+  --min-height: 10vh;
+  --border-style: solid;
+  --border-color: rgba(27, 36, 160, 0.7);
+}
+
+ion-thumbnail {
+  --border-radius: 10px;
+}
+
 .slide-container {
   background: darkblue;
 }
@@ -88,11 +103,6 @@ ion-fab-button {
   margin: 0;
 }
 
-.card-container {
-  background: darkblue;
-  background-image: url("/assets/GymBlueRoom1.jpg");
-}
-
 // MENU CARDS
 
 @media(hover: hover) and (pointer: fine) {
@@ -132,46 +142,10 @@ ion-fab-button {
   color: #fff;
 }
 
-// TRAINER CARDS
-
-.trainer-card {
-  position: relative;
-  text-align: center;
-  overflow: hidden;
-  font-family: 'Trueno Black Outline';
-  --background: rgba(3, 6, 161, 0.5);
+.list-container {
+  background-image: url("/assets/GymBlueRoom1.jpg");
 }
 
-// .trainer-card .trainer-header {
-//   position: absolute;
-//   top: 50%;
-//   left: 50%;
-//   transform: translate(-50%, -50%);
-//   text-align: center;
-// }
-
-.trainer-card-title {
-  position: absolute;
-  top: 45%;
-  font-size: 3.0em;
-  width: 100%;
-  font-weight: bold;
-  color: #fff;
-  text-shadow: 3px 3px darkblue;
-}
-
-.trainer-card-subtitle {
-  position: absolute;
-  top: 60%;
-  font-size: 1.0em;
-  width: 100%;
-  color: #fff;
-}
-
-.trainer-card img {
-  display: block;
-  overflow: hidden;
-}
 
 // @media(hover: hover) and (pointer: fine) {
 //   .my-card:hover {

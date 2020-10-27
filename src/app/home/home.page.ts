@@ -1,5 +1,5 @@
-import { Component, ViewChild, AfterViewInit, ViewChildren, ElementRef, OnInit, OnDestroy } from '@angular/core';
-import { IonContent, AnimationController, Animation, IonCard, ModalController, IonRouterOutlet, IonSlides } from '@ionic/angular';
+import { Component, ViewChild, AfterViewInit, ElementRef, OnInit } from '@angular/core';
+import { IonContent, AnimationController, Animation, ModalController, IonRouterOutlet, IonSlides, IonList } from '@ionic/angular';
 import { Router } from '@angular/router';
 
 import { Observable } from 'rxjs';
@@ -15,6 +15,7 @@ import { TrainerService } from '../shared/services/trainer.service';
 export class HomePage implements OnInit, AfterViewInit {
   @ViewChild(IonContent) content: IonContent;
   @ViewChild(IonSlides) slides: IonSlides;
+  @ViewChild(IonList) ionList:IonList;
   @ViewChild('training') myTraining: ElementRef;
   @ViewChild('classes') myClasses: ElementRef;
   @ViewChild('massage') myMassage: ElementRef;
@@ -28,6 +29,8 @@ export class HomePage implements OnInit, AfterViewInit {
 
   trainingAnim: Animation;
   classesAnim: Animation;
+  massageAnim: Animation;
+  membershipAnim: Animation;
   imageAnim1: Animation;
   imageAnim2: Animation;
   imageAnim3: Animation;
@@ -166,6 +169,26 @@ export class HomePage implements OnInit, AfterViewInit {
         { offset: 1, transform: 'scale(1)' }
       ]);
 
+    this.massageAnim = this.animationCtrl.create('myMassageAnim');
+    this.massageAnim
+      .addElement(this.myMassage.nativeElement)
+      .duration(7000)
+      .keyframes([
+        { offset: 0, transform: 'scale(1)' },
+        { offset: 0.5, transform: 'scale(2)' },
+        { offset: 1, transform: 'scale(1)' }
+      ]);  
+
+    this.membershipAnim = this.animationCtrl.create('myMembershipAnim');
+    this.membershipAnim
+      .addElement(this.myMembership.nativeElement)
+      .duration(7000)
+      .keyframes([
+        { offset: 0, transform: 'scale(1)' },
+        { offset: 0.5, transform: 'scale(2)' },
+        { offset: 1, transform: 'scale(1)' }
+      ]);  
+
     this.imageAnim1 = this.animationCtrl.create('myImageAnim1');
     this.imageAnim1
       .addElement(this.mySlideImg1.nativeElement)
@@ -233,21 +256,53 @@ export class HomePage implements OnInit, AfterViewInit {
     
   }
 
-  trainingHover() {
+  async trainingHover() {
+    await this.stopAllMenuAnimations();
     this.trainingAnim.play();
   }
 
-  classesHover() {
+  async classesHover() {
+    await this.stopAllMenuAnimations();
     this.classesAnim.play();
   }
 
-  async goToTraining() {
-    // this.router.navigate(['/training']);
-    const endElem = await this.myTrainers.nativeElement.getBoundingClientRect();
-    await this.content.scrollToPoint(endElem.x, endElem.y, 1000);
+  async massageHover() {
+    await this.stopAllMenuAnimations();
+    this.massageAnim.play();
+  }
+
+  async membershipHover() {
+    await this.stopAllMenuAnimations();
+    this.membershipAnim.play();
+  }
+
+  async stopAllMenuAnimations() {
+    this.trainingAnim.stop();
+    this.classesAnim.stop();
+    this.massageAnim.stop();
+    this.membershipAnim.stop();
+  }
+
+  goToTraining() {
+    this.router.navigate(['/training']);
+    // const endElem = await this.myTrainers.nativeElement.getBoundingClientRect();
+    // await this.content.scrollToPoint(endElem.x, endElem.y, 1000);
+  }
+
+  goToMassage() {
+    this.router.navigate(['/massage']);
+  }
+
+  goToClasses() {
+    this.router.navigate(['/classes']);
+  }
+
+  goToMembership() {
+    this.router.navigate(['/membership']);
   }
 
   async presentTrainerModal(trainer) {
+    this.ionList.closeSlidingItems();
     const modal = await this.modalCtrl.create({
       component: TrainerModalComponent,
       swipeToClose: true,
@@ -267,6 +322,11 @@ export class HomePage implements OnInit, AfterViewInit {
       }
     });
     return await  modal.present();
+  }
+
+  callTrainer(phoneNumber) {
+    this.ionList.closeSlidingItems();
+    window.open(`tel:${phoneNumber}`, '_system');
   }
 
 }

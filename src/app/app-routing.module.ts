@@ -7,10 +7,6 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
-  // {
-  //   path: 'folder/:id',
-  //   loadChildren: () => import('./folder/folder.module').then( m => m.FolderPageModule)
-  // },
   {
     path: 'home',
     loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
@@ -18,6 +14,18 @@ const routes: Routes = [
   {
     path: 'training',
     loadChildren: () => import('./training/training.module').then( m => m.TrainingPageModule)
+  },
+  {
+    path: 'classes',
+    loadChildren: () => import('./classes/classes.module').then( m => m.ClassesPageModule)
+  },
+  {
+    path: 'massage',
+    loadChildren: () => import('./massage/massage.module').then( m => m.MassagePageModule)
+  },
+  {
+    path: 'membership',
+    loadChildren: () => import('./membership/membership.module').then( m => m.MembershipPageModule)
   }
 ];
 
