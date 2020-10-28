@@ -167,14 +167,10 @@
               See More
             </ion-item-option>
           </ion-item-options>
-          <ion-item lines="full" class="ion-padding-bottom">
-            <ion-thumbnail (click)="presentTrainerModal(trainer)" slot="start">
-              <img style="display:block; height:auto;" src="{{ trainer.imageUrl }}">
-            </ion-thumbnail>
-
-              <p style="font-size: 3vh;"><strong>{{ trainer.displayName.firstName }} {{ trainer.displayName.lastName }}
-              </strong></p>
-
+          <ion-item lines="full" class="trainer-list">
+            <img (click)="presentTrainerModal(trainer)" src="{{ trainer.imageUrl }}">
+            <p class="ion-padding-start"><strong>{{ trainer.displayName.firstName }} {{ trainer.displayName.lastName }}
+            </strong></p>
           </ion-item>
           <ion-item-options side="end">
             <ion-item-option (click)="callTrainer(trainer.contact.phone)" 
