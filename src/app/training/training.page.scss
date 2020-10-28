@@ -1,3 +1,12 @@
+ion-toolbar {
+  position: fixed;
+  --background: transparent;
+}
+
+ion-menu-button {
+  color: var(--ion-color-primary);
+}
+
 ion-card {
   position: relative;
   text-align: center;
@@ -30,17 +39,28 @@ ion-card-subtitle {
 }
 
 .logo-header {
-  padding-bottom: 5px;
+  background: black;
+  border-radius: 50%;
+}
+
+.training-title {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  text-align: center;
+  text-shadow: 3px 3px 2px black;
+  color: white;
 }
 
 .trueno {
   font-family: 'Trueno Black';
-  font-size: 4vh;
+  font-size: 5vh;
 }
 
 .trueno-outline {
   font-family: 'Trueno Black Outline';
-  font-size: 4vh;
+  font-size: 5vh;
 }
 
 .card-container {
@@ -56,6 +76,13 @@ ion-card-subtitle {
   overflow: hidden;
   font-family: 'Trueno Black Outline';
   --background: rgba(3, 6, 161, 0.5);
+}
+
+@media(hover: hover) and (pointer: fine) {
+  .trainer-card:hover {
+    font-family: 'Trueno Black';
+    cursor: pointer;
+  }
 }
 
 // .trainer-card .trainer-header {

@@ -1,13 +1,33 @@
+ion-toolbar {
+  position: fixed;
+  --background: transparent;
+}
+
+ion-menu-button {
+  color: var(--ion-color-primary);
+}
+
 .logo-header {
-  padding-bottom: 5px;
+  background: black;
+  border-radius: 50%;
+}
+
+.classes-title {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  text-align: center;
+  text-shadow: 5px 5px 2px black;
+  color: white;
 }
 
 .trueno {
   font-family: 'Trueno Black';
-  font-size: 4vh;
+  font-size: 5vh;
 }
 
 .trueno-outline {
   font-family: 'Trueno Black Outline';
-  font-size: 4vh;
+  font-size: 5vh;
 }
