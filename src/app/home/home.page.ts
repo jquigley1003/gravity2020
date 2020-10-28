@@ -43,7 +43,6 @@ export class HomePage implements OnInit, AfterViewInit {
       delay: 3000,
     },
     loop: true,
-    parallax: true,
     on: {
       beforeInit() {
         const swiper = this;
@@ -55,7 +54,6 @@ export class HomePage implements OnInit, AfterViewInit {
           watchSlidesProgress: true,
           spaceBetween: 0,
           virtualTranslate: true,
-          parallax: true,
         };
         swiper.params = Object.assign(swiper.params, overwriteParams);
         swiper.params = Object.assign(swiper.originalParams, overwriteParams);
@@ -146,7 +144,16 @@ export class HomePage implements OnInit, AfterViewInit {
 
   ngOnInit() {
     this.getAllTrainers();
-  }  
+  }
+
+  ionViewWillLeave() {
+    this.slides.stopAutoplay();
+  }
+
+  ionViewDidEnter() {
+    this.slides.startAutoplay();
+  }
+  
 
   ngAfterViewInit() {
     this.trainingAnim = this.animationCtrl.create('myTrainingAnim');
