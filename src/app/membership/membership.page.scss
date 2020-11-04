@@ -7,7 +7,21 @@ ion-menu-button {
   color: var(--ion-color-primary);
 }
 
+ion-card-header {
+  text-align: center;
+  height: 15em;
+}
+ion-card-title {
+  color: black;
+}
+
+ion-card-subtitle {
+  color: black;
+  font-size: 18px;
+}
+
 ion-card-content {
+  color: black;
   text-align: center;
   height: 6em;
 }
@@ -35,4 +49,41 @@ ion-card-content {
 .trueno-outline {
   font-family: 'Trueno Black Outline';
   font-size: 5vh;
+}
+
+.logo-img {
+  display: block;
+  margin: auto;
+  width: 100%;
+}
+
+.logo-membership {
+  position: absolute;
+  border-radius: 50%;
+  top: 2%;
+  left: 50%;
+  width: 35%;
+  height: auto;
+  transform: translate(-50%, 0%);
+  z-index: 10;
+}
+
+.color-month {
+  background: rgba(252, 22, 6, 0.8);
+}
+
+.color-6month {
+  background: rgba(248, 142, 4, 0.8);
+}
+
+.color-year-ind {
+  background: rgba(232, 248, 4, 0.8);
+}
+
+.color-year-couple {
+  background: rgba(4, 248, 16, 0.8);
+}
+
+.color-day {
+  background: rgba(4, 8, 248, 0.8);
 }
