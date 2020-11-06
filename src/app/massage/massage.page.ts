@@ -15,6 +15,10 @@ export class MassagePage implements OnInit {
   ngOnInit() {
   }
 
+  callMassage() {
+    window.open(`tel:404-486-0506`, '_system');
+  }
+
   goHome() {
     this.router.navigate(['/home']);
   }

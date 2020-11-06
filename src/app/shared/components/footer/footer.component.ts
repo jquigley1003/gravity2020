@@ -11,4 +11,8 @@ export class FooterComponent implements OnInit {
 
   ngOnInit() {}
 
+  callGravity() {
+    window.open(`tel:404-486-0506`, '_system');
+  }
+
 }
