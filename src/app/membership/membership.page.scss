@@ -4,7 +4,7 @@ ion-toolbar {
 }
 
 ion-menu-button {
-  color: var(--ion-color-primary);
+  --background: rgba(var(--ion-color-primary-rgb), 0.55);
 }
 
 ion-card-header {
