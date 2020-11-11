@@ -26,6 +26,10 @@ const routes: Routes = [
   {
     path: 'membership',
     loadChildren: () => import('./membership/membership.module').then( m => m.MembershipPageModule)
+  },
+  {
+    path: 'haircut',
+    loadChildren: () => import('./haircut/haircut.module').then( m => m.HaircutPageModule)
   }
 ];
 

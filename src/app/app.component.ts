@@ -33,15 +33,15 @@ export class AppComponent implements OnInit {
       icon: 'man'
     },
     {
+      title: 'Haircut',
+      url: '/haircut',
+      icon: 'cut'
+    },
+    {
       title: 'Membership',
       url: '/membership',
       icon: 'card'
     }
-    // {
-    //   title: 'Archived',
-    //   url: '/folder/Archived',
-    //   icon: 'archive'
-    // },
     // {
     //   title: 'Trash',
     //   url: '/folder/Trash',
