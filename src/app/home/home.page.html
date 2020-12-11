@@ -207,7 +207,7 @@
   <ion-row class="list-container">
     <ion-col class="ion-margin" size-xl="6" offset-xl="3">
       <ion-list>
-        <ion-item-sliding *ngFor="let trainer of allTrainers$ | async">
+        <ion-item-sliding *ngFor="let trainer of allTrainers$ | async" (click)="presentTrainerModal(trainer)">
           <ion-item-options side="start">
             <ion-item-option (click)="presentTrainerModal(trainer)" 
             color="tertiary">
@@ -215,7 +215,7 @@
             </ion-item-option>
           </ion-item-options>
           <ion-item lines="full" class="trainer-list">
-            <img (click)="presentTrainerModal(trainer)" src="{{ trainer.imageUrl }}">
+            <img src="{{ trainer.imageUrl }}">
             <p class="ion-padding-start"><strong>{{ trainer.displayName.firstName }} {{ trainer.displayName.lastName }}
             </strong></p>
           </ion-item>
