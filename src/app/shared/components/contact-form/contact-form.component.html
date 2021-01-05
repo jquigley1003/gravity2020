@@ -1,0 +1,29 @@
+<ion-row>
+  <ion-col size="2"></ion-col>
+  <ion-col size="8">
+    <ion-header class="ion-text-center ion-padding">
+      Fill in All Fields, Then Click Submit.
+    </ion-header>
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmitForm()">
+      <ion-item>
+        <ion-label position="floating">Your First & Last Name</ion-label>
+        <ion-input type="text" formControlName="name"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Your Email</ion-label>
+        <ion-input type="email" formControlName="email" required></ion-input>
+      </ion-item>
+      <ion-item class="message-item">
+        <ion-label position="floating">Your Message to Gravity</ion-label>
+        <ion-textarea type="text" maxlength="1300" auto-grow="true"
+        formControlName="message"></ion-textarea>
+      </ion-item>
+      <div class="ion-text-center ion-padding-top">
+        <ion-button color="secondary" type="submit" [disabled]="!contactForm.valid" >
+          Submit
+        </ion-button>
+      </div>  
+    </form>
+  </ion-col>
+  <ion-col size="2"></ion-col>
+</ion-row>

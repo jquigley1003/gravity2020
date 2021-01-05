@@ -10,6 +10,7 @@ import { HomePage } from './home.page';
 
 import { TrainerModalModule } from '../shared/modals/trainer-modal/trainer-modal.module';
 import { FooterModule } from '../shared/components/footer/footer.module';
+import { ContactFormModule } from '../shared/components/contact-form/contact-form.module';
 
 @NgModule({
   imports: [
@@ -18,6 +19,7 @@ import { FooterModule } from '../shared/components/footer/footer.module';
     IonicModule,
     HomePageRoutingModule,
     TrainerModalModule,
+    ContactFormModule,
     FooterModule
   ],
   declarations: [HomePage]
