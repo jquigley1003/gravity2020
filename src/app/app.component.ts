@@ -34,7 +34,7 @@ export class AppComponent implements OnInit {
       icon: 'man'
     },
     {
-      title: 'Haircut',
+      title: 'Taper Hair Studio',
       url: '/haircut',
       icon: 'cut'
     },

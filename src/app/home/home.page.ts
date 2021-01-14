@@ -26,7 +26,8 @@ export class HomePage implements OnInit, AfterViewInit {
   @ViewChild('mySlideImg3') mySlideImg3: ElementRef;
   @ViewChild('mySlideImg4') mySlideImg4: ElementRef;
 
-
+  chromeBrowser: boolean;
+  safariBrowser: boolean;
   trainingAnim: Animation;
   classesAnim: Animation;
   massageAnim: Animation;
@@ -144,6 +145,7 @@ export class HomePage implements OnInit, AfterViewInit {
 
   ngOnInit() {
     this.getAllTrainers();
+    this.checkForSafariBrowser();
   }
 
   ionViewWillLeave() {
@@ -249,6 +251,15 @@ export class HomePage implements OnInit, AfterViewInit {
      })
   }
 
+  async checkForSafariBrowser() {
+    this.chromeBrowser = navigator.userAgent.indexOf("Chrome") > -1;
+    this.safariBrowser = navigator.userAgent.indexOf("Safari") > -1;
+    if((this.chromeBrowser) && (this.safariBrowser)) {
+      this.safariBrowser = false;
+    }
+    console.log("is this a safari browser? ",this.safariBrowser);
+  }
+
   async getAllTrainers() {
     this.allTrainers$ = this.trainerService.getAllTrainers();
   }
@@ -306,6 +317,10 @@ export class HomePage implements OnInit, AfterViewInit {
 
   goToMembership() {
     this.router.navigate(['/membership']);
+  }
+
+  goToHaircut() {
+    this.router.navigate(['/haircut']);
   }
 
   async presentTrainerModal(trainer) {
