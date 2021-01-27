@@ -38,7 +38,7 @@ ion-card-content {
   left: 50%;
   transform: translate(-50%, 0%);
   text-align: center;
-  text-shadow: 5px 5px 2px black;
+  text-shadow: 3px 3px 2px black;
   color: white;
 }
 
@@ -47,9 +47,19 @@ ion-card-content {
   font-size: 5vh;
 }
 
+.trueno-h1 {
+  font-family: 'Trueno Black';
+  font-size: 10vw;
+}
+
 .trueno-outline {
   font-family: 'Trueno Black Outline';
   font-size: 5vh;
+}
+
+.trueno-outline-h1 {
+  font-family: 'Trueno Black Outline';
+  font-size: 10vw;
 }
 
 .logo-img {
@@ -71,20 +81,26 @@ ion-card-content {
 
 .color-month {
   background: rgba(252, 22, 6, 0.8);
+  --background: rgba(252, 22, 6, 0.8);
 }
 
 .color-6month {
   background: rgba(248, 142, 4, 0.8);
+  --background: rgba(248, 142, 4, 0.8);
 }
 
 .color-year-ind {
   background: rgba(232, 248, 4, 0.8);
+  --background: rgba(232, 248, 4, 0.8);
+  --color: var(--ion-color-medium);
 }
 
 .color-year-couple {
   background: rgba(4, 248, 16, 0.8);
+  --background: rgba(4, 248, 16, 0.8);
 }
 
 .color-day {
   background: rgba(4, 8, 248, 0.8);
+  --background: rgba(4, 8, 248, 0.8);
 }

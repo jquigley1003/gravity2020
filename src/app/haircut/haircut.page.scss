@@ -13,7 +13,7 @@ ion-menu-button {
   left: 50%;
   transform: translate(-50%, 0%);
   text-align: center;
-  text-shadow: 5px 5px 2px black;
+  text-shadow: 3px 3px 2px black;
   color: white;
 }
 
@@ -22,7 +22,17 @@ ion-menu-button {
   font-size: 5vh;
 }
 
+.trueno-h1 {
+  font-family: 'Trueno Black';
+  font-size: 10vw;
+}
+
 .trueno-outline {
   font-family: 'Trueno Black Outline';
   font-size: 5vh;
+}
+
+.trueno-outline-h1 {
+  font-family: 'Trueno Black Outline';
+  font-size: 10vw;
 }
