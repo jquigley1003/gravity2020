@@ -1,6 +1,7 @@
 import { Component, ViewChild, AfterViewInit, ElementRef, OnInit } from '@angular/core';
 import { IonContent, AnimationController, Animation, ModalController, IonRouterOutlet, IonSlides, IonList } from '@ionic/angular';
 import { Router } from '@angular/router';
+import Player from '@vimeo/player';
 
 import { Observable } from 'rxjs';
 
@@ -25,6 +26,9 @@ export class HomePage implements OnInit, AfterViewInit {
   @ViewChild('mySlideImg2') mySlideImg2: ElementRef;
   @ViewChild('mySlideImg3') mySlideImg3: ElementRef;
   @ViewChild('mySlideImg4') mySlideImg4: ElementRef;
+  @ViewChild('myVideo01') myVideo01: ElementRef;
+  @ViewChild('myVideo02') myVideo02: ElementRef;
+  @ViewChild('myVideo03') myVideo03: ElementRef;
 
   chromeBrowser: boolean;
   safariBrowser: boolean;
@@ -38,7 +42,25 @@ export class HomePage implements OnInit, AfterViewInit {
   imageAnim4: Animation;
   showFAB:boolean = false;
   allTrainers$: Observable<any>;
+  videoPlayer01: Player;
+  videoPlayer02: Player;
+  videoPlayer03: Player;
 
+  videoOpts = [
+    {
+      id: 505389029,
+      width: 450
+    },
+    {
+      id: 505389029,
+      width: 450
+    },
+    {
+      id: 505389029,
+      width: 450
+    }
+  ]
+  
   slideOpts = {
     autoplay: {
       delay: 3000,
@@ -225,6 +247,21 @@ export class HomePage implements OnInit, AfterViewInit {
       .duration(4000)
       .from('transform', 'scale(1)')
       .to('transform', 'scale(2)');
+
+    this.videoPlayer01 = new Player(this.myVideo01.nativeElement, {
+      id: 505389071,
+      width: 350
+    });
+    
+    this.videoPlayer02 = new Player(this.myVideo02.nativeElement, {
+      id: 505389084,
+      width: 350
+    });  
+
+    this.videoPlayer03 = new Player(this.myVideo03.nativeElement, {
+      id: 505389029,
+      width: 350
+    });  
   }
 
   async startImgAnim() {
