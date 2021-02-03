@@ -7,28 +7,41 @@ ion-menu-button {
   --background: rgba(var(--ion-color-primary-rgb), 0.55);
 }
 
+ion-list {
+  background: var(--ion-color-dark);
+}
+
+ion-item {
+  --background: var(--ion-item-light);
+}
+
+ion-card {
+  --background: var(--ion-color-primary-contrast);
+}
+
 ion-card-header {
   text-align: center;
 }
+
 ion-card-title {
-  color: black;
+  color: var(ion-color-dark);
   height: 3em;
 }
 
 ion-card-subtitle {
-  color: black;
+  color: var(ion-color-dark);
   font-size: 18px;
   height: 2em;
 }
 
 ion-card-content {
-  color: black;
+  color: var(ion-color-dark);
   text-align: center;
   height: 6em;
 }
 
 .logo-header {
-  background: black;
+  background: var(ion-color-dark);
   border-radius: 50%;
 }
 
