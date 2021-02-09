@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
 import { OwnerModalComponent } from './owner-modal.component';
@@ -7,7 +7,7 @@ describe('OwnerModalComponent', () => {
   let component: OwnerModalComponent;
   let fixture: ComponentFixture<OwnerModalComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ OwnerModalComponent ],
       imports: [IonicModule.forRoot()]
