@@ -1,0 +1,92 @@
+ion-toolbar {
+  position: fixed;
+  --background: transparent;
+}
+
+ion-menu-button {
+  --background: rgba(var(--ion-color-primary-rgb), 0.55);
+}
+
+ion-slides {
+	// swiper-pagination-bullet is configured in golbal.css;
+	--bullet-background: none;
+	--bullet-background-active: none;
+	--scroll-bar-background: rgb(190, 198, 211);
+	--scroll-bar-background-active: blue;
+	height: 100%;
+}
+
+.trueno {
+  font-family: 'Trueno Black';
+  font-size: 5vh;
+}
+
+.trueno-h1 {
+  font-family: 'Trueno Black';
+  font-size: 10vw;
+}
+
+.trueno-outline {
+  font-family: 'Trueno Black Outline';
+  font-size: 5vh;
+}
+
+.trueno-outline-h1 {
+  font-family: 'Trueno Black Outline';
+  font-size: 10vw;
+}
+
+.training-video-title {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  text-align: center;
+  text-shadow: 3px 3px 2px black;
+  color: white;
+}
+
+.video-container {
+  background: white;
+	border-bottom: var(--ion-color-primary) solid 2px;
+}
+
+// TRAINER CARDS
+
+.trainer-card {
+  position: relative;
+  text-align: center;
+  overflow: hidden;
+  font-family: 'Trueno Black Outline';
+  --background: rgba(3, 6, 161, 0.5);
+}
+
+@media(hover: hover) and (pointer: fine) {
+  .trainer-card:hover {
+    font-family: 'Trueno Black';
+    cursor: pointer;
+  }
+}
+
+.trainer-card-title {
+  position: absolute;
+  top: 45%;
+  font-size: 3.0em;
+  width: 100%;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 3px 3px darkblue;
+}
+
+.trainer-card-subtitle {
+  position: absolute;
+  top: 60%;
+  font-size: 1.0em;
+  width: 100%;
+  color: #fff;
+}
+
+.trainer-card img {
+  display: block;
+  overflow: hidden;
+}

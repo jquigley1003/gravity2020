@@ -24,6 +24,11 @@ export class AppComponent implements OnInit {
       icon: 'barbell'
     },
     {
+      title: 'Training Videos',
+      url: '/training/videos',
+      icon: 'videocam'
+    },
+    {
       title: 'Classes',
       url: '/classes',
       icon: 'people'
