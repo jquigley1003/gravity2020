@@ -344,6 +344,10 @@ export class HomePage implements OnInit, AfterViewInit {
     // await this.content.scrollToPoint(endElem.x, endElem.y, 1000);
   }
 
+  goToTrainingVideos() {
+    this.router.navigate(['/training/videos']);
+  }
+
   goToMassage() {
     this.router.navigate(['/massage']);
   }
