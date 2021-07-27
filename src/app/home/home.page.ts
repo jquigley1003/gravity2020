@@ -127,8 +127,8 @@ export class HomePage implements OnInit, AfterViewInit {
 
   public instagramPhotos = [
     {
-      title: 'Biceps',
-      url:  '../assets/socialMedia/photos-biceps.jpg',
+      title: 'Darren with Trainers',
+      url:  '../assets/socialMedia/darren-with-trainers.jpg',
       icon: 'heart'
     },
     {
@@ -137,23 +137,23 @@ export class HomePage implements OnInit, AfterViewInit {
       icon: 'heart'
     },
     {
-      title: 'David Sigler',
-      url: '../assets/socialMedia/photos-dave1.jpg',
+      title: 'JTK Clients',
+      url: '../assets/socialMedia/jtk-clients.jpg',
       icon: 'heart'
     },
     {
-      title: 'Pushups',
-      url: '../assets/socialMedia/photos-pushupwithbb.jpg',
+      title: 'Beasties Clients',
+      url: '../assets/socialMedia/beasties-clients.jpg',
       icon: 'heart'
     },
     {
-      title: 'Wonder Women',
-      url: '../assets/socialMedia/photos-women.jpg',
+      title: 'Balancing Woman',
+      url: '../assets/socialMedia/woman-balancing.jpg',
       icon: 'heart'
     },
     {
-      title: 'Darren Floro-Bryant',
-      url: '../assets/socialMedia/photos-dfb1.jpg',
+      title: 'Leg Press',
+      url: '../assets/socialMedia/leg-press.jpg',
       icon: 'heart'
     },
   ];
@@ -249,12 +249,12 @@ export class HomePage implements OnInit, AfterViewInit {
       .to('transform', 'scale(2)');
 
     this.videoPlayer01 = new Player(this.myVideo01.nativeElement, {
-      id: 505389071,
+      id: 547557874,
       width: 350
     });
     
     this.videoPlayer02 = new Player(this.myVideo02.nativeElement, {
-      id: 505389084,
+      id: 547556251,
       width: 350
     });  
 
