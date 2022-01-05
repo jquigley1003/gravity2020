@@ -29,6 +29,7 @@ export class HomePage implements OnInit, AfterViewInit {
   @ViewChild('myVideo01') myVideo01: ElementRef;
   @ViewChild('myVideo02') myVideo02: ElementRef;
   @ViewChild('myVideo03') myVideo03: ElementRef;
+  @ViewChild('myVideo04') myVideo04: ElementRef;
 
   chromeBrowser: boolean;
   safariBrowser: boolean;
@@ -45,6 +46,7 @@ export class HomePage implements OnInit, AfterViewInit {
   videoPlayer01: Player;
   videoPlayer02: Player;
   videoPlayer03: Player;
+  videoPlayer04: Player;
 
   videoOpts = [
     {
@@ -252,15 +254,17 @@ export class HomePage implements OnInit, AfterViewInit {
       id: 547557874,
       width: 350
     });
-    
     this.videoPlayer02 = new Player(this.myVideo02.nativeElement, {
       id: 547556251,
       width: 350
     });  
-
     this.videoPlayer03 = new Player(this.myVideo03.nativeElement, {
       id: 505389029,
       width: 350
+    });
+    this.videoPlayer04 = new Player(this.myVideo04.nativeElement, {
+      id: 662783084,
+      responsive: true
     });  
   }
 
