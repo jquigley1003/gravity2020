@@ -1,9 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import { SwUpdate } from '@angular/service-worker';
 
 import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { Router } from '@angular/router';
+
+import { AlertService } from './shared/services/alert.service';
 
 @Component({
   selector: 'app-root',
@@ -64,7 +67,9 @@ export class AppComponent implements OnInit {
     private platform: Platform,
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
-    private router: Router
+    private swUpdate: SwUpdate,
+    private router: Router,
+    private alertService: AlertService
   ) {
     this.initializeApp();
   }
@@ -77,10 +82,32 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    // const path = window.location.pathname.split('folder/')[1];
-    // if (path !== undefined) {
-    //   this.selectedIndex = this.appPages.findIndex(page => page.title.toLowerCase() === path.toLowerCase());
-    // }
+    if (this.swUpdate.isEnabled) {
+      this.swUpdate.available.subscribe(data => {
+        console.log(data.current.appData);
+        this.alertService.presentAlert(
+          'App Update!',
+          'Updated version of Gravity Fitness app available.',
+          'Load Improved Version?',
+          [
+            {
+              text: 'Cancel',
+              role: 'cancel',
+              cssClass: 'secondary',
+            },
+            {
+              text: 'Yes',
+              handler: () => {
+                window.location.reload();
+              }
+            }
+          ]
+        );
+          // if (confirm('Updated version of SFCA app available. Load New Version?')) {
+          //     window.location.reload();
+          // }
+      });
+    }
   }
 
   goToPage(page, index) {
