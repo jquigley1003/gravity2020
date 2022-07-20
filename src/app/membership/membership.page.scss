@@ -8,7 +8,8 @@ ion-menu-button {
 }
 
 ion-list {
-  background: var(--ion-color-dark);
+  --background: var(--ion-color-dark);
+  border: var(--ion-color-dark) solid 2px;
 }
 
 ion-item {
