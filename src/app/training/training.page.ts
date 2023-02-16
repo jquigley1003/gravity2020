@@ -4,7 +4,7 @@ import { Router} from '@angular/router';
 import { IonRouterOutlet, ModalController } from '@ionic/angular';
 
 import { Observable, Subject } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
+import { map, takeUntil } from 'rxjs/operators';
 
 import { TrainerModalComponent } from '../shared/modals/trainer-modal/trainer-modal.component';
 import { Trainer } from '../shared/models/trainer';
@@ -34,12 +34,19 @@ export class TrainingPage implements OnInit, OnDestroy {
   }
 
   async getAllTrainers() {
-    this.allTrainers$ = this.trainerService.getAllTrainers();
+    this.allTrainers$ = await this.trainerService.getAllTrainers();
+
+    this.allTrainers$ = await this.allTrainers$.pipe(map((data) => {
+      data.sort((a, b) => {
+          return a.displayName.lastName < b.displayName.lastName ? -1 : 1;
+       });
+      return data;
+      }))
     // this.allTrainers$
     //   .pipe(takeUntil(this.ngUnsubscribe))
     //   .subscribe(async data => {
     //     if (data) {
-    //       this.trainers = data.sort((a, b) => (a.displayName.lastName < b.displayName.lastName) ? -1 : 1) as Trainer[];
+    //       this.trainers = data.sort((a,b) => a.displayName.lastName - b.displayName.lastName ? 1 : -1);
     //       console.log('all trainers: ',this.trainers);
     //     } else {
     //       this.trainers = [];

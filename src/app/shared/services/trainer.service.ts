@@ -23,7 +23,7 @@ export class TrainerService implements OnDestroy {
   }
 
   fetchTrainers() {
-    this.dbService.collection$('trainers', ref => ref.orderBy('displayName.lastName'))
+    this.dbService.collection$('trainers', ref => ref.where('showTrainer', "==" , true))
     .pipe(takeUntil(this.ngUnsubscribe))
     .subscribe(
       res => {
