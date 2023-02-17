@@ -298,7 +298,7 @@ export class HomePage implements OnInit, AfterViewInit {
     if((this.chromeBrowser) && (this.safariBrowser)) {
       this.safariBrowser = false;
     }
-    console.log("is this a safari browser? ",this.safariBrowser);
+    // console.log("is this a safari browser? ",this.safariBrowser);
   }
 
   async getAllTrainers() {

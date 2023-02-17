@@ -33,15 +33,14 @@ export class TrainingPage implements OnInit, OnDestroy {
     this.getAllTrainers();
   }
 
-  async getAllTrainers() {
-    this.allTrainers$ = await this.trainerService.getAllTrainers();
-
-    this.allTrainers$ = await this.allTrainers$.pipe(map((data) => {
-      data.sort((a, b) => {
+  getAllTrainers() {
+    this.allTrainers$ = this.trainerService.getAllTrainers()
+      .pipe(map((data) => {
+        data.sort((a, b) => {
           return a.displayName.lastName < b.displayName.lastName ? -1 : 1;
-       });
-      return data;
-      }))
+        });
+        return data;
+      }));
     // this.allTrainers$
     //   .pipe(takeUntil(this.ngUnsubscribe))
     //   .subscribe(async data => {
