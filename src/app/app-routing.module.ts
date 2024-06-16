@@ -30,6 +30,10 @@ const routes: Routes = [
   {
     path: 'haircut',
     loadChildren: () => import('./haircut/haircut.module').then( m => m.HaircutPageModule)
+  },
+  {
+    path: 'physical-therapy',
+    loadChildren: () => import('./physical-therapy/physical-therapy.module').then( m => m.PhysicalTherapyPageModule)
   }
 ];
 

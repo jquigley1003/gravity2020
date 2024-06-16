@@ -1,0 +1,44 @@
+a {
+  color: var(--ion-color-primary-shade);
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+ion-toolbar {
+  position: fixed;
+  --background: transparent;
+}
+
+ion-menu-button {
+  --background: rgba(var(--ion-color-primary-rgb), 0.55);
+}
+
+.therapy-title {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  text-align: center;
+  text-shadow: 3px 3px 2px black;
+  color: white;
+}
+
+.trueno {
+  font-family: 'Trueno Black';
+  font-size: 5vh;
+}
+
+.trueno-h1 {
+  font-family: 'Trueno Black';
+  font-size: 10vw;
+}
+
+.trueno-outline {
+  font-family: 'Trueno Black Outline';
+  font-size: 5vh;
+}
+
+.trueno-outline-h1 {
+  font-family: 'Trueno Black Outline';
+  font-size: 10vw;
+}

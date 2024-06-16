@@ -42,6 +42,11 @@ export class AppComponent implements OnInit {
       icon: 'man'
     },
     {
+      title: 'Physical Therapy',
+      url: '/physical-therapy',
+      icon: 'medkit'
+    },
+    {
       title: 'Taper Hair Studio',
       url: '/haircut',
       icon: 'cut'
